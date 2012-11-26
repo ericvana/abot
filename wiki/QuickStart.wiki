@@ -43,7 +43,7 @@
   </abot>  
 </configuration>
     }}}
-    #: Create an instance of Abot.Poco.CrawlConfiguration (this overrides web/app.config)
+    #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides web/app.config)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
 crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
@@ -58,7 +58,7 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
   {{{
 WebCrawler crawler = new WebCrawler();
   }}}
-  If you manually created CrawlConfiguration object, this completely overrides web/app.config
+  If you configured by manually creating CrawlConfiguration object. NOTE: This completely overrides web/app.config settings.
   {{{
 WebCrawler crawler = new WebCrawler(config);
   }}}
