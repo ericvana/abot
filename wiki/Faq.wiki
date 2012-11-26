@@ -1,4 +1,5 @@
 #summary Common question and answers
+#labels Featured
 
 =Faq=
 
