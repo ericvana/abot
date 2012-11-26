@@ -38,13 +38,13 @@ Both Abot.Demo, Abot.Tests.Unit and Abot.Tests.Integration rely on this project 
 ===How to run Abot.Tests.Unit===
   #: Right click on the Abot.!SiteSimulator project and set it as the "startup project". 
   #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
-  #: Run Abot.Tests.Unit using Nunit app or a tool like TestDriven
+  #: Run Abot.Tests.Unit using NUnit app or a tool like !TestDriven
 
 ===How to run Abot.Tests.Integration===
   #: Verify "External Tools" defined above are installed and working
   #: Right clicking on the !Abot.SiteSimulator project and set it as the "startup project". 
   #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
   #: Run fiddler with AutoResponder (See
-  #: Run Abot.Tests.Integration using Nunit app or a tool like TestDriven
+  #: Run Abot.Tests.Integration using NUnit app or a tool like !TestDriven
 
 ===What you need to run Abot.Demo
