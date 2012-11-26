@@ -55,8 +55,8 @@ crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//defaul
 crawlConfig.Data.Add("SomeCustomConfigValue1", "1111");//Add custom config values
 crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config values
     }}}
-  #: Create an instance of Abot.Crawler.WebCrawler
- If you configured using web/app.config
+  #: Create an instance of Abot.Crawler.!WebCrawler
+  If you configured using web/app.config
   {{{
   WebCrawler crawler = new WebCrawler();
   }}}
