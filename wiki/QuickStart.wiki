@@ -44,10 +44,25 @@
 </configuration>
     }}}
     #: Create an instance of Abot.Poco.CrawlConfiguration (this overrides web/app.config)
-3: Create an instance of Abot.Crawler.WebCrawler
-4: Register for events so you can process the results in real time
-5: Run the crawl 
-6: Check the crawl result and explain why the pages crawled are not in there (memory issue)
+    {{{
+CrawlConfiguration config = new CrawlConfiguration
+{
+	CrawlTimeoutSeconds = 3600,
+	DownloadableContentTypes = "text/html, text/plain",
+	IsExternalPageCrawlingEnabled = false,
+	IsExternalPageLinksCrawlingEnabled  = false,
+	MaxConcurrentThreads = 10,
+	MaxPagesToCrawl = 1000,
+};
+    }}}
+  #: Create an instance of Abot.Crawler.WebCrawler
+  {{{
+WebCrawler crawler = new WebCrawler(); //If you configured using web/app.config
+WebCrawler crawler = new WebCrawler(config); //if you manually created CrawlConfiguration object
+  }}}
+  #: Register for events so you can process the results in real time
+  #: Run the crawl 
+  #: Check the crawl result and explain why the pages crawled are not in there (memory issue)
 
 ---------How to use abot (not so quick):
 -crawldecisionmaker override/impl, the heart of behavior change 
