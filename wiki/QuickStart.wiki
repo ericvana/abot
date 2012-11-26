@@ -64,7 +64,7 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
   {{{
   WebCrawler crawler = new WebCrawler(config);
   }}}
-  4: Register for events and create processing methods
+  #: Register for events and create processing methods
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
   crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
@@ -103,7 +103,7 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  5: Run the crawl and check the crawl result
+  #: Run the crawl and check the crawl result
 {{{
 CrawlResult result = crawler.Crawl(new Uri("http://localhost:1111/"));
 
