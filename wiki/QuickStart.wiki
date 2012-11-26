@@ -120,6 +120,7 @@ WebCrawler crawler = new WebCrawler(
 	new YourScheduler(), 
 	new YourHttpRequester(), 
 	new YourHyperLinkParser(), 
+        new YourDomainRateLimiter,
 	new YourCrawlDecisionMaker(), //You will most likely write an impl for this
 	crawlConfig);
 }}}
@@ -132,11 +133,12 @@ WebCrawler crawler = new WebCrawler(
 	null, 
 	new YourHttpRequester(), 
 	new YourHyperLinkParser(), 
-	null, 
+	null,
+        null, 
 	null);
 }}}
 
-You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. See Abot.Core.!CrawlDecisionMaker.cs to see the default implementation.
+You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding CrawlDecisionMaker.cs methods of interest to take advantage of some of its common methods.
 
 {{{
 public interface ICrawlDecisionMaker
