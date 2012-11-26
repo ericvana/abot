@@ -3,10 +3,5 @@
 
 =Faq=
 
-*Why did you create Abot?*<br />
-A project that I was working on a few years ago needed to have its proprietary web crawler completely redone due to stability/performance/maintenance issues. There were no open source C# .Net web crawlers available. 
-
-We purchased a license to the leading 3rd party crawler and I spent several months forcefully bending it to do what we needed it to do. The process made me take note of all the pains of working with that product. Abot was built to be exactly what I needed back then. 
-
 *Can the crawl be distributed over multiple machines (distributed crawling)?*<br /> 
 Yes, just implement the IScheduler interface to suite your distributed needs and pass it into the WebCrawler constructor.
