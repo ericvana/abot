@@ -142,7 +142,7 @@ WebCrawler crawler = new WebCrawler(
 	null);
 }}}
 
-You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding !CrawlDecisionMaker.cs methods of interest to take advantage of some of its common methods.
+You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding !CrawlDecisionMaker.cs methods of interest to take advantage of some of its common behaviors like making sure a url is only crawled once.
 
 {{{
 public interface ICrawlDecisionMaker
