@@ -62,14 +62,56 @@ WebCrawler crawler = new WebCrawler(); //If you configured using web/app.config
   {{{
 WebCrawler crawler = new WebCrawler(config); //if you manually created CrawlConfiguration object
   }}}
-  #: Register for events so you can process the results in real time
+  #: Register for events and create processing methods
 {{{
+crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
+crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
+crawler.PageCrawlDisallowedAsync += crawler_PageCrawlDisallowed;
+crawler.PageLinksCrawlDisallowedAsync += crawler_PageLinksCrawlDisallowed;
+}}}
+{{{
+void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
+{
+	PageToCrawl pageToCrawl = e.PageToCrawl;
+	Console.WriteLine("About to crawl link {0} which was found on page {1}", pageToCrawl.Uri.AbsoluteUri, pageToCrawl.ParentUri.AbsoluteUri);
+}
 
+void crawler_ProcessPageCrawlCompleted(object sender, PageCrawlCompletedArgs e)
+{
+	CrawledPage crawledPage = e.CrawledPage;
+
+	if (crawledPage.WebException != null || crawledPage.HttpWebResponse.StatusCode != HttpStatusCode.OK)
+		Console.WriteLine("Crawl of page failed {0}", crawledPage.Uri.AbsoluteUri);
+	else
+		Console.WriteLine("Crawl of page succeeded {0}", crawledPage.Uri.AbsoluteUri);
+
+	if (string.IsNullOrEmpty(crawledPage.RawContent))
+		Console.WriteLine("Page had no content {0}", crawledPage.Uri.AbsoluteUri);
+}
+
+void crawler_PageLinksCrawlDisallowed(object sender, PageLinksCrawlDisallowedArgs e)
+{
+	CrawledPage crawledPage = e.CrawledPage;
+	Console.WriteLine("Did not crawl the links on page {0} due to {1}", crawledPage.Uri.AbsoluteUri, e.DisallowedReason);
+}
+
+void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
+{
+	PageToCrawl pageToCrawl = e.PageToCrawl;
+	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
+}
 }}}
   #: Run the crawl and check the crawl result
 {{{
+CrawlResult result = crawler.Crawl(new Uri("http://localhost:1111/"));
+
+if (result.ErrorOccurred)
+	Console.WriteLine("Crawl of {0} completed with error: {1}", result.RootUri.AbsoluteUri, result.ErrorMessage);
+else
+	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
+
 }}}
-  Notice that the CrawlResult object does not have the pages that were crawled in memory. Keeping all the crawled pages in memory by default can cause a system out of memory exception if enough pages are crawled. So if you need to keep all the pages that were crawled in memory you must do it manually using the events show above. 
+  Notice that the CrawlResult object does not have a collection of pages that were crawled. Keeping all the crawled pages in memory by default can cause a system out of memory exception if enough pages are crawled. So if you need to keep all the pages that were crawled in memory you must use the events above. 
 
 ---------How to use abot (not so quick):
 -crawldecisionmaker override/impl, the heart of behavior change 
