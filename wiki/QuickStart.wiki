@@ -55,12 +55,12 @@ CrawlConfiguration config = new CrawlConfiguration
 	MaxPagesToCrawl = 1000,
 };
     }}}
-  #: Create an instance of Abot.Crawler.WebCrawler
+  #: Create an instance of Abot.Crawler.!WebCrawler
   {{{
 WebCrawler crawler = new WebCrawler(); //If you configured using web/app.config
   }}}
   {{{
-WebCrawler crawler = new WebCrawler(config); //if you manually created CrawlConfiguration object
+WebCrawler crawler = new WebCrawler(config); //if you manually created CrawlConfiguration object, this overrides any setting in the web/app.config
   }}}
   #: Register for events and create processing methods
 {{{
