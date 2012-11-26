@@ -39,8 +39,8 @@
       minCrawlDelayPerDomainMilliSeconds="0"
       />
     <extensionValues>
-      <add key="key1" value="value1" />
-      <add key="key2" value="value2" />
+      <add key="SomeCustomConfigValue1" value="1111" />
+      <add key="SomeCustomConfigValue2" value="2222" />
     </extensionValues>
   </abot>  
 </configuration>
@@ -52,8 +52,8 @@ crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not ti
 crawlConfig.MaxConcurrentThreads = 10;//default
 crawlConfig.MaxPagesToCrawl = 1000;//default
 crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
-crawlConfig.Data.Add("SomeCustomConfigValue1", "1111");//Add custom config values
-crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config values
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
     }}}
   #: Create an instance of Abot.Crawler.!WebCrawler
   {{{
