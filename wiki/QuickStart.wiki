@@ -57,10 +57,12 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
     }}}
   #: Create an instance of Abot.Crawler.!WebCrawler
   {{{
+//Will use app/web.config for confguration
 WebCrawler crawler = new WebCrawler();
   }}}
   {{{
-WebCrawler crawler = new WebCrawler(config);
+//Will use the manually created crawlConfig object created above
+WebCrawler crawler = new WebCrawler(crawlConfig);
   }}}
   #: Register for events and create processing methods
   {{{
