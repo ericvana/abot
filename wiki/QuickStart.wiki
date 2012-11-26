@@ -47,16 +47,20 @@
     }}}
     #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides web/app.config)
     {{{
-aaa
+CrawlConfiguration crawlConfig = new CrawlConfiguration();
+crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
+crawlConfig.MaxConcurrentThreads = 10;//default
+crawlConfig.MaxPagesToCrawl = 1000;//default
+crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
+crawlConfig.Data.Add("SomeCustomConfigValue1", "1111");//Add custom config values
+crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config values
     }}}
   #: Create an instance of Abot.Crawler.!WebCrawler
-  If you configured using web/app.config
   {{{
-  WebCrawler crawler = new WebCrawler();
+WebCrawler crawler = new WebCrawler();
   }}}
-  If you configured by manually creating !CrawlConfiguration object. NOTE: This completely overrides web/app.config settings.
   {{{
-  WebCrawler crawler = new WebCrawler(config);
+WebCrawler crawler = new WebCrawler(config);
   }}}
   #: Register for events and create processing methods
   {{{
