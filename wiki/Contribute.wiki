@@ -2,7 +2,7 @@
 
 =Contribute=
 
-  * Spreading the word on blogs/websites why Abot is great
+  * Spread the word on blogs/websites and tell others why Abot is great
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
   * Let us know when you create a cool project that uses Abot
-  * Submit bug fixes or features
+  * Submit bug fixes or features (contact me if your interested or comment on this page)
