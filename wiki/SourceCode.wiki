@@ -51,6 +51,6 @@ Both Abot.Demo, Abot.Tests.Unit and Abot.Tests.Integration rely on this project 
   #: Verify "External Tools" defined above are installed and working
   #: Right clicking on the !Abot.SiteSimulator project and set it as the "startup project". 
   #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
-  #: Run fiddler with AutoResponder (See
+  #: Run fiddler with !AutoResponder feature enabled
   #: Run Abot.Tests.Integration using NUnit app or a tool like !TestDriven
   #: View the file output at Abot.Tests.Integration/bin/debug/log.txt file for all the output.
