@@ -58,18 +58,18 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
   #: Create an instance of Abot.Crawler.!WebCrawler
   If you configured using web/app.config
   {{{
-WebCrawler crawler = new WebCrawler();
+  WebCrawler crawler = new WebCrawler();
   }}}
   If you configured by manually creating CrawlConfiguration object. NOTE: This completely overrides web/app.config settings.
   {{{
-WebCrawler crawler = new WebCrawler(config);
+  WebCrawler crawler = new WebCrawler(config);
   }}}
   #: Register for events and create processing methods
-{{{
-crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
-crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
-crawler.PageCrawlDisallowedAsync += crawler_PageCrawlDisallowed;
-crawler.PageLinksCrawlDisallowedAsync += crawler_PageLinksCrawlDisallowed;
+  {{{
+  crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
+  crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
+  crawler.PageCrawlDisallowedAsync += crawler_PageCrawlDisallowed;
+  crawler.PageLinksCrawlDisallowedAsync +=    crawler_PageLinksCrawlDisallowed;
 }}}
 {{{
 void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
