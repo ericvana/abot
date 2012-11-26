@@ -56,8 +56,6 @@ crawlConfig.Data.Add("SomeCustomConfigValue1", "1111");//Add custom config value
 crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config values
     }}}
   #: Create an instance of Abot.Crawler.!WebCrawler
-
-
   #: Register for events and create processing methods
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
