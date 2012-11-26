@@ -60,7 +60,7 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
   {{{
   WebCrawler crawler = new WebCrawler();
   }}}
-  If you configured by manually creating CrawlConfiguration object. NOTE: This completely overrides web/app.config settings.
+  If you configured by manually creating !CrawlConfiguration object. NOTE: This completely overrides web/app.config settings.
   {{{
   WebCrawler crawler = new WebCrawler(config);
   }}}
