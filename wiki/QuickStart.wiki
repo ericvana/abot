@@ -109,7 +109,7 @@ else
 	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
 
 }}}
-  Notice that the CrawlResult object does not have a collection of pages that were crawled. Keeping all the crawled pages in memory by default can cause a system out of memory exception if enough pages are crawled. So if you need to keep all the pages that were crawled in memory you must use the events above. 
+  Notice that the !CrawlResult object does not have a collection of pages that were crawled. Keeping all the crawled pages in memory by default can cause a system out of memory exception if enough pages are crawled. So if you need to keep all the pages that were crawled in memory you must use the events above. 
 
 ===Changing Crawl Behavior===
 Plug in your own implementations of key interfaces. 
