@@ -1,13 +1,57 @@
-#summary One-sentence summary of this page.
+=QuickStart=
 
-= Introduction =
+===Installing Abot===
+  #: Download the latest from the Downloads tab
+  #: Extract the Abot.dll file and add a reference from your project
+  #: Nuget package coming soon
 
-Add your content here.
+===Using Abot===
+  #: Add the following using statements.. 
+  {{{
+  using Abot.Crawler;
+  using Abot.Core;
+  using Abot.Poco;
+  }}}
+  #: Do one of the following
+    #: Add the following to the app.config or web.cofig of the assembly using the library
+    {{{
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="abot" type="Abot.Core.ConfigurationSectionHandler, Abot"/>
+  </configSections>
 
+  <abot>
+    <crawlBehavior
+      maxConcurrentThreads="10"
+      maxPagesToCrawl="1000"
+      userAgentString="abot v1.0 http://code.google.com/p/abot"
+      crawlTimeoutSeconds="0"
+      downloadableContentTypes="text/html"
+      isUriRecrawlingEnabled="false"
+      isExternalPageCrawlingEnabled="true"
+      isExternalPageLinksCrawlingEnabled="false"
+        />
+    <politeness
+      isThrottlingEnabled="false"
+      minCrawlDelayPerDomainMilliSeconds="0"
+      />
+    <extensionValues>
+      <add key="key1" value="value1" />
+      <add key="key2" value="value2" />
+    </extensionValues>
+  </abot>  
+</configuration>
+    }}}
+    #: Create an instance of Abot.Poco.CrawlConfiguration (this overrides web/app.config)
+3: Create an instance of Abot.Crawler.WebCrawler
+4: Register for events so you can process the results in real time
+5: Run the crawl 
+6: Check the crawl result and explain why the pages crawled are not in there (memory issue)
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+---------How to use abot (not so quick):
+-crawldecisionmaker override/impl, the heart of behavior change 
+	**consider creating a constructor that takes this alone since its a common impl)
+	**make all methods virtual so someone can use base. but still have their own behavior
+-other impls (use distributed scheduler as an example)
+-Configuration extensions, adding them and using them
