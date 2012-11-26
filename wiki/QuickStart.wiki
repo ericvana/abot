@@ -64,6 +64,7 @@ crawlConfig.Data.Add("SomeCustomConfigValue2", "2222");//Add custom config value
   {{{
   WebCrawler crawler = new WebCrawler(config);
   }}}
+
   #: Register for events and create processing methods
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
