@@ -1,13 +1,14 @@
-#summary One-sentence summary of this page.
+#summary Common question and answers
 
-= Introduction =
+=Faq=
 
-Add your content here.
+*Why did you create Abot?*<br />
+A project that I was working on a few years ago needed to have its proprietary web crawler completely redone due to stability/performance/maintenance issues. There were no open source C# .Net web crawlers available. 
 
+We purchased a license to the leading 3rd party crawler and I spent several months forcefully bending it to do what we needed it to do. The process made me take note of all the pains that I had along the way. Abot was built to be exactly what I needed back then. 
 
-= Details =
+*Can the crawl be distributed over multiple machines (distributed crawling)?*<br /> 
+Yes, just implement the IScheduler interface to suite your distributed needs and pass it into the WebCrawler constructor.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+-NCrawler: Gpl
+-Arachnode: no tests, tries to be everything to everyone, not pluggable
