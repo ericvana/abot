@@ -15,29 +15,25 @@ Most common changes/extensions can be done just by extending classes, creating a
   #: Run the installer.
   #: Download wvtesting.saz file from http://abot.googlecode.com/files/wvtesting2.saz
   #: Open fiddler
-  #: Select the "AutoResponder" tab and import the wvtesting2.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
+  #: Select the "!AutoResponder" tab and import the wvtesting2.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
 
 
 ===Your First Build===
-  #: Checkout the latest from svn (ADD link here)
+  #: Checkout the latest from http://code.google.com/p/abot/source/checkout
   #: Open solution in Visual Studio
   #: If ILMerge installation path is not "C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe", you must...
     #: Right click the Abot project and select properties
     #: Select Build Events section
-    #: Update the last command  in the "Post-build event command line" textbox
-		from...
-			"C:\Program Files (x86)\Microsoft\ILMerge\ilmerge.exe"  /targetplatform:v4 /wildcards /internalize /target:library /out:$(TargetDir)Abot.dll $(TargetDir)\IlMerge\*.dll
-		to...
-			"ADDYOURINSTALLPATHHERE"  /targetplatform:v4 /wildcards /internalize /target:library /out:$(TargetDir)Abot.dll $(TargetDir)\IlMerge\*.dll
+    #: In the "Post-build event command line" textbox replace "C:\Program Files (x86)\Microsoft\ILMerge\ilmerge.exe" with your ILMerge installation path
   #: Build the solution normally
 
 ===Solution Overview===
-Abot: Main library for all crawling and utility code.
-Abot.Demo: Simple console app that demonstrates how to use abot. The demo is setup to crawl the Abot.SiteSimulator site by default so it must be running.
-Abot.SiteSimulator: An asp.net mvc application that can simulate any number of pages and several http responses that is encountered during a crawl. This site is used to produce a predictable site crawl for abot.
+*Abot*: Main library for all crawling and utility code.
+*Abot.Demo*: Simple console app that demonstrates how to use abot. The demo is setup to crawl the Abot.SiteSimulator site by default so it must be running.
+*Abot.SiteSimulator*: An asp.net mvc application that can simulate any number of pages and several http responses that is encountered during a crawl. This site is used to produce a predictable site crawl for abot.
 Both Abot.Demo, Abot.Tests.Unit and Abot.Tests.Integration rely on this project to be running on http://localhost:1111/. 
-Abot.Tests.Unit: Unit tests that test all components under isolation. Abot.SiteSimulator site must be running for tests to pass since mocking http web requests is more trouble then its worth.
-Abot.Test.Integration: Tests the end to end crawl behavior. These are real crawls, no mock/stub/etc.. Abot.SiteSimulator site must be running for tests to pass.
+*Abot.Tests.Unit*: Unit tests that test all components under isolation. Abot.SiteSimulator site must be running for tests to pass since mocking http web requests is more trouble then its worth.
+*Abot.Test.Integration*: Tests the end to end crawl behavior. These are real crawls, no mock/stub/etc.. Abot.SiteSimulator site must be running for tests to pass.
 
 ===How to run Abot.Tests.Unit===
   #: Right click on the Abot.SiteSimulator project and set it as the "startup project". 
