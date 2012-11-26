@@ -12,7 +12,7 @@
   using Abot.Core;
   using Abot.Poco;
   }}}
-  #: Do one of the following
+  #: Configure Abot using one of the following
     #: Add the following to the app.config or web.cofig of the assembly using the library
     {{{
 <?xml version="1.0"?>
@@ -138,7 +138,7 @@ WebCrawler crawler = new WebCrawler(
 	null);
 }}}
 
-You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding CrawlDecisionMaker.cs methods of interest to take advantage of some of its common methods.
+You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding !CrawlDecisionMaker.cs methods of interest to take advantage of some of its common methods.
 
 {{{
 public interface ICrawlDecisionMaker
