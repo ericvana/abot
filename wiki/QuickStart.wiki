@@ -4,7 +4,7 @@
 =QuickStart=
 
 ===Installing Abot===
-  #: Download the latest from the Downloads tab
+  #: Download the latest from the [http://code.google.com/p/abot/downloads/list Downloads] page
   #: Extract the Abot.dll file and add a reference from your project
   #: Nuget package coming soon
 
