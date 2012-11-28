@@ -7,7 +7,6 @@ Here are few things that the Abot project could use...
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
   * Let us know when you create a cool project that uses Abot
   * Submit bug fixes or features (contact me if your interested or comment on this page)
-  * A logo
   * Donations (link coming soon)
 
 Please reach out if you have another contributions by emailing abotcrawler@gmail.com.
