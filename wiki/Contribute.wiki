@@ -9,4 +9,3 @@ Here are few things that the Abot project could use. However, please reach out i
   * Submit bug fixes or features (contact me if your interested or comment on this page)
   * A logo
   * Donations (link coming soon)
-  * Send emails to abot-web-crawler@googlegroups.com
