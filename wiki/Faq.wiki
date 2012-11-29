@@ -4,4 +4,4 @@
 =Faq=
 
 *Can the crawl be distributed over multiple machines (distributed crawling)?*<br /> 
-Yes, just implement the IScheduler interface to suite your distributed needs and pass it into the WebCrawler constructor.
+Yes, just implement the IScheduler interface to suite your distributed needs and pass it into the Abot.Crawler.!WebCrawler.cs constructor.
