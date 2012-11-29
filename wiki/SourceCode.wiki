@@ -2,7 +2,7 @@
 #labels Featured
 
 =Working With The Source Code=
-Most common changes/extensions can be done just by extending classes, creating an custom implementation of a core interface or overriding methods. All this can be done outside of Abot's source code. However, if the changes that you are going to make are out of the ordinary or you want to contribute a bug fix/feature then you will want to work directly with Abot's source code. Below you will find what you need to get the solution building/running on your local machine.
+Most common changes/extensions can be done just by extending classes and overriding methods or creating a custom implementation of a core interface. All this can be done outside of Abot's source code. However, if the changes that you are going to make are out of the ordinary or you want to contribute a bug fix or feature then you will want to work directly with Abot's source code. Below you will find what you need to get the solution building/running on your local machine.
 
 ===External Tools Needed===
 *ILMerge*: A free console app that that merges multiple assemblies into a single assembly. This tool takes Abot.dll and combines it with all the 3rd party libs that it relies on (log4net.dll, Automapper.dll, etc...). This results in a single Abot.dll file which makes Abot's end users only have to reference a single dll file instead of 5. Abot invokes ILMerge through a Visual Studio post build command on the Abot.csproj project.
