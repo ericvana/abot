@@ -65,7 +65,7 @@ WebCrawler crawler = new WebCrawler();
 //Will use the manually created crawlConfig object created above
 WebCrawler crawler = new WebCrawler(crawlConfig);
   }}}
-  #: Register for events and create processing methods
+  #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
   crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
