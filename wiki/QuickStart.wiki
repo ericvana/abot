@@ -70,7 +70,7 @@ WebCrawler crawler = new WebCrawler(crawlConfig);
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
   crawler.PageCrawlCompletedAsync += crawler_ProcessPageCrawlCompleted;
   crawler.PageCrawlDisallowedAsync += crawler_PageCrawlDisallowed;
-  crawler.PageLinksCrawlDisallowedAsync +=    crawler_PageLinksCrawlDisallowed;
+  crawler.PageLinksCrawlDisallowedAsync += crawler_PageLinksCrawlDisallowed;
 }}}
 {{{
 void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
