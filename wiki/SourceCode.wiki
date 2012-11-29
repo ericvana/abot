@@ -14,7 +14,7 @@ Most common changes/extensions can be done just by extending classes and overrid
 
   #: Download the installer from http://www.fiddler2.com/fiddler2/version.asp
   #: Run the installer.
-  #: Download wvtesting.saz file from http://abot.googlecode.com/files/wvtesting2.saz
+  #: Download wvtesting2.saz file from http://abot.googlecode.com/files/wvtesting2.saz
   #: Open fiddler
   #: Select the "!AutoResponder" tab and import the wvtesting2.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
 
