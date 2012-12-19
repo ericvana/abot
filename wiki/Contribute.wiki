@@ -8,7 +8,8 @@ Here are few things that the Abot project could use...
   * Let us know when you create a cool project that uses Abot
   * Submit bug fixes or features (contact me if your interested or comment on this page)
 
-Many hours are spent developing Abot outside of regular working hours. Any donation would be greatly appreciated.<br />
+==Consider Making A Donation==
+Many hours are spent developing Abot outside of regular working hours. Any donation would be greatly appreciated. If you have more time than money consider visiting the [Contribute Contribute] page.<br />
 [https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
 
 Please reach out if you have other contribution ideas by emailing abotcrawler@gmail.com.
