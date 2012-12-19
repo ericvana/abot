@@ -9,7 +9,7 @@ Here are few things that the Abot project could use...
   * Submit bug fixes or features (contact me if your interested or comment on this page)
 
 ==Consider Making A Donation==
-A donation in any amount would be greatly appreciated. <br />
+A donation of any amount would be greatly appreciated. <br />
 [https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
 
 Please reach out if you have other contribution ideas by emailing abotcrawler@gmail.com.
