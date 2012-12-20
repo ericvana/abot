@@ -3,14 +3,9 @@
 
 =QuickStart=
 
-Abot.dll is built targeting the .NET framework version 4.5. As of version 1.0.0.0, any project that references Abot.dll must *AT LEAST* target .NET framework version 4.0 or greater. Future versions may require 4.5 or greater. 
-
-If the target framework version of your project is below the minimum described above you can change it by following the steps outlined here...
-
-http://msdn.microsoft.com/en-us/library/bb398202.aspx
-
 
 ===Installing Abot===
+  #: Verify the project that will use Abot targets .NET framework version 4.0 or greater
   #: Download the latest from the [http://code.google.com/p/abot/downloads/list Downloads] page
   #: Extract the Abot.dll file and add a reference from your project
   #: Nuget package coming soon
