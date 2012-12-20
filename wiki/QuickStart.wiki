@@ -5,8 +5,8 @@
 
 
 ===Installing Abot===
-  #: Verify the project that will use Abot targets .NET framework version 4.0 or greater
   #: Download the latest from the [http://code.google.com/p/abot/downloads/list Downloads] page
+  #: Verify the project that will use Abot targets .NET framework version 4.0 or greater
   #: Extract the Abot.dll file and add a reference from your project
   #: Nuget package coming soon
 
