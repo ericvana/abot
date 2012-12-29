@@ -9,7 +9,7 @@ Most common changes/extensions can be done just by extending classes and overrid
 
 Future releases may target version 4.0 instead so the solution/project source files can be opened in Visual Studio 2010 sp1. Visual Studio 2008 will not be supported.
 
-NOTE: This only applies if you need to work with Abot's source code. Your Visual Studio 2010 projects that target .NET framework 4.0 or above can reference Abot.dll with no issues.
+<font color="red">*NOTE:* This only applies if you need to work with Abot's source code. Your Visual Studio 2010 projects that target .NET framework 4.0 or above can reference Abot.dll with no issues.</font>
 
 *ILMerge*: A free console app that that merges multiple assemblies into a single assembly. This tool takes Abot.dll and combines it with all the 3rd party libs that it relies on (log4net.dll, Automapper.dll, etc...). This results in a single Abot.dll file which makes Abot's end users only have to reference a single dll file instead of 5. Abot invokes ILMerge through a Visual Studio post build command on the Abot.csproj project.
 
