@@ -5,6 +5,10 @@
 Most common changes/extensions can be done just by extending classes and overriding methods or creating a custom implementation of a core interface. All this can be done outside of Abot's source code. However, if the changes that you are going to make are out of the ordinary or you want to contribute a bug fix or feature then you will want to work directly with Abot's source code. Below you will find what you need to get the solution building/running on your local machine.
 
 ===External Tools Needed===
+*Visual Studio 2012*: All code was created using Visual Studio 2012 and targeting the .NET framework 4.5. This means to open the solution/project source code you will need to have Visual Studio 2012.
+Future releases may target version 4.0  instead so the solution/project source files can be opened in Visual Studio 2010. Visual Studio 2008 will not be supported.
+NOTE: This is only if you need to work with the source code, you can reference Abot.dll from Visual Studio 2010 as long as the project referencing it is at least targeting .NET framework version 4.0.
+
 *ILMerge*: A free console app that that merges multiple assemblies into a single assembly. This tool takes Abot.dll and combines it with all the 3rd party libs that it relies on (log4net.dll, Automapper.dll, etc...). This results in a single Abot.dll file which makes Abot's end users only have to reference a single dll file instead of 5. Abot invokes ILMerge through a Visual Studio post build command on the Abot.csproj project.
 
   #: Download the installer from http://www.microsoft.com/en-us/download/details.aspx?id=17630.
