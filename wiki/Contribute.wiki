@@ -8,6 +8,8 @@ Here are few things that the Abot project could use...
   * Let us know when you create a cool project that uses Abot
   * Submit bug fixes or features (contact me if your interested)
 
+I created a new project [http://code.google.com/p/abot-contrib/ Abot-Contrib] to house any projects that utilize or add significant functionlity to abot. If you are interested in building something utilizing abot let us know.
+
 ==Consider Making A Donation==
 A donation of any amount would be greatly appreciated. <br />
 [https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
