@@ -53,8 +53,8 @@
       maxRobotsDotTextCrawlDelayInSeconds="5" 
       minCrawlDelayPerDomainMilliSeconds="1000"/>
     <extensionValues>
-      <add key="key1" value="value1"/>
-      <add key="key2" value="value2"/>
+      <add key="SomeCustomConfigKey1" value="someValue1"/>
+      <add key="SomeCustomConfigKey2" value="someValue2"/>
     </extensionValues>
   </abot>
   </configuration>
@@ -62,21 +62,21 @@
     #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides web/app.config)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
-crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
-crawlConfig.MaxConcurrentThreads = 10;//default
-crawlConfig.MaxPagesToCrawl = 1000;//default
+crawlConfig.CrawlTimeoutSeconds = 3600;
+crawlConfig.MaxConcurrentThreads = 10;
+crawlConfig.MaxPagesToCrawl = 1000;
 crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
-crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
-crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValueKey1", "someValue1");
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigKey2", "someValue2");
     }}}
   #: Create an instance of Abot.Crawler.!WebCrawler
   {{{
 //Will use app/web.config for confguration
-WebCrawler crawler = new WebCrawler();
+PoliteWebCrawler crawler = new PoliteWebCrawler();
   }}}
   {{{
 //Will use the manually created crawlConfig object created above
-WebCrawler crawler = new WebCrawler(crawlConfig);
+PoliteWebCrawler crawler = new PoliteWebCrawler(crawlConfig, null, null, null, null, null, null, null);
   }}}
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
