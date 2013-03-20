@@ -17,7 +17,7 @@
   using Abot.Poco;
   }}}
   #: Configure Abot using one of the following
-    #: Add the following to the app.config or web.cofig of the assembly using the library
+    #: Add the following to the app.config of the assembly using the library
     {{{
 <?xml version="1.0"?>
 <configuration>
