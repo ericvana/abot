@@ -57,9 +57,6 @@ crawlConfig.MaxPagesToCrawl = 1000;//default
 crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
-etc...
-etc...
-etc...
     }}}
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
