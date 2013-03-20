@@ -68,6 +68,22 @@ crawlConfig.MaxPagesToCrawl = 1000;
 crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValueKey1", "someValue1");
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigKey2", "someValue2");
+etc...
+etc...
+etc...
+    }}}
+  #: Load from app.config then tweek   
+    {{{
+CrawlConfiguration crawlConfig = AbotConfigurationSectionHandler.LoadFromXml().Convert();
+crawlConfig.CrawlTimeoutSeconds = 3600;
+crawlConfig.MaxConcurrentThreads = 10;
+crawlConfig.MaxPagesToCrawl = 1000;
+crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");
+etc...
+etc...
+etc...
     }}}
   #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
