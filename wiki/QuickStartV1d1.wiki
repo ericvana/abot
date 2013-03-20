@@ -90,6 +90,7 @@ PoliteWebCrawler crawler = new PoliteWebCrawler();
 //Will use the manually created crawlConfig object created above
 PoliteWebCrawler crawler = new PoliteWebCrawler(crawlConfig, null, null, null, null, null, null, null);
   }}}
+
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
