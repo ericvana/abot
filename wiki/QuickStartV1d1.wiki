@@ -146,23 +146,28 @@ else
 Plug in your own implementations of key interfaces. 
 
 {{{
-WebCrawler crawler = new WebCrawler(
+PoliteWebCrawler crawler = new PoliteWebCrawler(
+        new CrawlConfiguration(),
+	new YourCrawlDecisionMaker(), //You will most likely write an impl for this
 	new YourThreadMgr(), 
 	new YourScheduler(), 
 	new YourHttpRequester(), 
 	new YourHyperLinkParser(), 
+	new YourMemoryManager(), 
         new YourDomainRateLimiter,
-	new YourCrawlDecisionMaker(), //You will most likely write an impl for this
-	crawlConfig);
+	new YourRobotsDotTextFinder(), 
+	);
 }}}
 
-Passing null for any implementation will use the default. The example below will use your custom implementation for the IHttpRequester and IHyperLinkParser but will use the default for all others.
+Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
 
 {{{
-WebCrawler crawler = new WebCrawler(
+PoliteWebCrawler crawler = new PoliteWebCrawler(
 	null, 
 	null, 
-	new YourHttpRequester(), 
+        null,
+        null,
+	new YourPageRequester(), 
 	new YourHyperLinkParser(), 
 	null,
         null, 
