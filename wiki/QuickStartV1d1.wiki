@@ -59,7 +59,7 @@
   </abot>
   </configuration>
     }}}
-    #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides web/app.config)
+    #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides app.config)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
 crawlConfig.CrawlTimeoutSeconds = 3600;
@@ -87,7 +87,7 @@ etc...
     }}}
   #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
-//Will use app/web.config for confguration
+//Will use app.config for confguration
 PoliteWebCrawler crawler = new PoliteWebCrawler();
   }}}
   {{{
