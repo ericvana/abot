@@ -48,22 +48,9 @@
   </abot>  
 </configuration>
     }}}
-    #: Create an instance of Abot.Poco.!CrawlConfiguration (this overrides web/app.config)
+    #: Create an instance of Abot.Poco.!CrawlConfiguration (this ignores app.config values)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
-crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
-crawlConfig.MaxConcurrentThreads = 10;//default
-crawlConfig.MaxPagesToCrawl = 1000;//default
-crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
-crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
-crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
-etc...
-etc...
-etc...
-    }}}
-  #: Load from app.config then tweek   
-    {{{
-CrawlConfiguration crawlConfig = AbotConfigurationSectionHandler.LoadFromXml().Convert();
 crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
 crawlConfig.MaxConcurrentThreads = 10;//default
 crawlConfig.MaxPagesToCrawl = 1000;//default
