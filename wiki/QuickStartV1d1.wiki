@@ -81,7 +81,6 @@ crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");
 etc...
     }}}
-
   #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
 //Will use app.config for confguration
@@ -91,7 +90,6 @@ PoliteWebCrawler crawler = new PoliteWebCrawler();
 //Will use the manually created crawlConfig object created above
 PoliteWebCrawler crawler = new PoliteWebCrawler(crawlConfig, null, null, null, null, null, null, null);
   }}}
-
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
