@@ -69,7 +69,7 @@ crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//defaul
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValueKey1", "someValue1");
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigKey2", "someValue2");
     }}}
-  #: Create an instance of Abot.Crawler.!WebCrawler
+  #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
 //Will use app/web.config for confguration
 PoliteWebCrawler crawler = new PoliteWebCrawler();
