@@ -81,6 +81,8 @@ crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");
 etc...
     }}}
+    #: Look at Abot.Poco.CrawlConfiguration object's comments to see what effect the config values have [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here]
+
   #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
 //Will use app.config for confguration
