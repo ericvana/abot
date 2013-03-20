@@ -16,7 +16,7 @@
   using Abot.Core;
   using Abot.Poco;
   }}}
-  #: Configure Abot using one of the following
+  #: Configure Abot using one of the following methods. Look at Abot.Poco.!CrawlConfiguration comments to see what effect the config values have [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here]
     #: Add the following to the app.config of the assembly using the library
     {{{
 <?xml version="1.0"?>
@@ -59,7 +59,7 @@
   </abot>
   </configuration>
     }}}
-    #: Create an instance of Abot.Poco.!CrawlConfiguration. This approach ignores the app.config values completely. Every app.config value has the same named property on the CrawlConfiguration object)
+    #: Create an instance of Abot.Poco.!CrawlConfiguration. This approach ignores the app.config values completely. Every app.config value has the same named property on the !CrawlConfiguration object)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
 crawlConfig.CrawlTimeoutSeconds = 100;
@@ -81,7 +81,6 @@ crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");
 etc...
     }}}
-    #: Look at Abot.Poco.!CrawlConfiguration object's comments to see what effect the config values have [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here]
 
   #: Create an instance of Abot.Crawler.!PoliteWebCrawler
   {{{
