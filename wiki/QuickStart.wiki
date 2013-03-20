@@ -57,16 +57,23 @@ crawlConfig.MaxPagesToCrawl = 1000;//default
 crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
+etc...
+etc...
+etc...
     }}}
-  #: Create an instance of Abot.Crawler.!WebCrawler
-  {{{
-//Will use app/web.config for confguration
-WebCrawler crawler = new WebCrawler();
-  }}}
-  {{{
-//Will use the manually created crawlConfig object created above
-WebCrawler crawler = new WebCrawler(crawlConfig);
-  }}}
+  #: Load from app.config then tweek   
+    {{{
+CrawlConfiguration crawlConfig = AbotConfigurationSectionHandler.LoadFromXml().Convert();
+crawlConfig.CrawlTimeoutSeconds = 3600;//default is 0 which means it will not timeout
+crawlConfig.MaxConcurrentThreads = 10;//default
+crawlConfig.MaxPagesToCrawl = 1000;//default
+crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//default
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
+crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
+etc...
+etc...
+etc...
+    }}}
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
