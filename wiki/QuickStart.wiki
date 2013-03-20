@@ -58,6 +58,16 @@ crawlConfig.UserAgentString = "abot v1.0 http://code.google.com/p/abot";//defaul
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue1", "1111");//Add custom config values
 crawlConfig.ConfigurationExtensions.Add("SomeCustomConfigValue2", "2222");//Add custom config values
     }}}
+  #: Create an instance of Abot.Crawler.!WebCrawler
+  {{{
+//Will use app.config for confguration
+WebCrawler crawler = new WebCrawler();
+  }}}
+  {{{
+//Will use the manually created crawlConfig object created above
+WebCrawler crawler = new WebCrawler(crawlConfig);
+  }}}
+
   #: Register for events and create processing methods (both synchronous and asynchronous versions available)
   {{{
   crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
