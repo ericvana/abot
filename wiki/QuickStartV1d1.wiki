@@ -155,8 +155,7 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	new YourHyperLinkParser(), 
 	new YourMemoryManager(), 
         new YourDomainRateLimiter,
-	new YourRobotsDotTextFinder(), 
-	);
+	new YourRobotsDotTextFinder());
 }}}
 
 Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
