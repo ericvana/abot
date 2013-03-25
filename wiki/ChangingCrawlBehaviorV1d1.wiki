@@ -1,14 +1,14 @@
-#summary Changing the crawl behavior
+#summary Changing Crawl behavior
 
-=Changing the crawl behavior=
+=Altering Crawl behavior=
 
 Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works by default. There are several ways to alter the behavior.
 
-===Altering By Configuration===
+===By Configuration===
 Like detailed in the quickstart. The easiest way to change Abot's behavior is to change the config values. No need to cover this in another section. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===Plugging In Custom Implementations===
-Plug in your own implementations of key interfaces. 
+===By Custom Implementations===
+Plug in your own implementations of key interfaces.  
 
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler(
