@@ -5,15 +5,47 @@
 Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works by default. There are several ways to alter the behavior.
 
 ===By Configuration===
-Like detailed in the quickstart. The easiest way to change Abot's behavior is to change the config values. No need to cover this in another section. See the QuickStart page for examples on the different ways Abot can be configured.
+The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===By Custom Implementations===
-Plug in your own implementations of key interfaces.  
+
+===Altering Crawl Decisions Using ICrawlDecisionMaker===
+
+Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links or download the page's raw content.
+
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl has not been exceeded and whether it should crawl the link if it is external.  
+
+{{{
+public interface ICrawlDecisionMaker
+{
+	/// <summary>
+	/// Decides whether the page should be crawled
+	/// </summary>
+	CrawlDecision ShouldCrawlPage(PageToCrawl pageToCrawl, CrawlContext crawlContext);
+
+	/// <summary>
+	/// Decides whether the page's links should be crawled
+	/// </summary>
+	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
+
+	/// <summary>
+	/// Decides whether the page's content should be downloaded
+	/// </summary>
+	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
+}
+}}}
+
+
+===Altering Crawl Decisions Using Delegates===
+aaaaaaaa
+
+
+===Plugging In Custom Implementations===
+The PoliteWebCrawler constructor can be used to plug in your own implementations of key interfaces.  
 
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler(
         new CrawlConfiguration(),
-	new YourCrawlDecisionMaker(), //You will most likely write an impl for this
+	new YourCrawlDecisionMaker(),
 	new YourThreadMgr(), 
 	new YourScheduler(), 
 	new YourHttpRequester(), 
@@ -38,58 +70,5 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	null);
 }}}
 
-You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding !CrawlDecisionMaker.cs methods of interest to take advantage of some of its common behaviors like making sure a url is only crawled once.
 
-{{{
-public interface ICrawlDecisionMaker
-{
-	/// <summary>
-	/// Decides whether the page should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPage(PageToCrawl pageToCrawl, CrawlContext crawlContext);
 
-	/// <summary>
-	/// Decides whether the page's links should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
-
-	/// <summary>
-	/// Decides whether the page's content should be downloaded
-	/// </summary>
-	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
-}
-}}}
-
-== Logging ==
-
-Abot uses !Log4Net to log messages. See the app.config files in projects projects Abot.Demo or Abot.Tests.Integration to see how !Log4Net is configured. These log statements are a great way to see whats going on during a crawl. Below is from Abot.Demo project, app.config file. If this prints out to much data for you change the level from "DEBUG" to "INFO".
-
-{{{
-  <configSections>
-    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
-  </configSections>
-
-  <log4net>
-    <appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
-      <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="[%date] [%thread] [%-5level] - %message%newline" />
-      </layout>
-    </appender>
-    <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
-      <file value="log.txt" />
-      <appendToFile value="true" />
-      <rollingStyle value="Size" />
-      <maxSizeRollBackups value="10" />
-      <maximumFileSize value="10240KB" />
-      <staticLogFileName value="true" />
-      <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="[%date] [%-3thread] [%-5level] - %message%newline" />
-      </layout>
-    </appender>
-    <root>
-      <level value="DEBUG" />
-      <appender-ref ref="ConsoleAppender" />
-      <appender-ref ref="RollingFileAppender" />
-    </root>
-  </log4net>
-}}}
