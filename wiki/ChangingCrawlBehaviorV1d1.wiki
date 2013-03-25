@@ -32,11 +32,11 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	null);
 }}}
 
-===By Configuration===
+===Configuration===
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===By Passing Custom Delegate/Funcs===
-Sometimes you dont want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic.
+===Custom Delegate/Funcs===
+Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic.
 
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler();
@@ -70,7 +70,7 @@ crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
 }}}
 
 
-===Altering Crawl Decisions Using ICrawlDecisionMaker===
+===Crawl Decisions Using ICrawlDecisionMaker===
 Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links and download the page's raw content.
 
 {{{
@@ -94,6 +94,4 @@ public interface ICrawlDecisionMaker
 }}}
 
 [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
-
-
 
