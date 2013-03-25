@@ -142,59 +142,6 @@ else
 }}}
   Notice that the !CrawlResult object does not have a collection of pages that were crawled. Keeping all the crawled pages in memory by default can cause a system out of memory exception if enough pages are crawled. So if you need to keep all the pages that were crawled in memory you must use the events above. 
 
-===Changing Crawl Behavior===
-Plug in your own implementations of key interfaces. 
-
-{{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-        new CrawlConfiguration(),
-	new YourCrawlDecisionMaker(), //You will most likely write an impl for this
-	new YourThreadMgr(), 
-	new YourScheduler(), 
-	new YourHttpRequester(), 
-	new YourHyperLinkParser(), 
-	new YourMemoryManager(), 
-        new YourDomainRateLimiter,
-	new YourRobotsDotTextFinder());
-}}}
-
-Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
-
-{{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-	null, 
-	null, 
-        null,
-        null,
-	new YourPageRequester(), 
-	new YourHyperLinkParser(), 
-	null,
-        null, 
-	null);
-}}}
-
-You will likely need to write your own implementation for ICrawlDecisionMaker since this is what will determine what pages get crawled, what pages will have their links crawled and whether the page's raw content should be downloaded. Also consider overriding !CrawlDecisionMaker.cs methods of interest to take advantage of some of its common behaviors like making sure a url is only crawled once.
-
-{{{
-public interface ICrawlDecisionMaker
-{
-	/// <summary>
-	/// Decides whether the page should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPage(PageToCrawl pageToCrawl, CrawlContext crawlContext);
-
-	/// <summary>
-	/// Decides whether the page's links should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
-
-	/// <summary>
-	/// Decides whether the page's content should be downloaded
-	/// </summary>
-	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
-}
-}}}
-
 == Logging ==
 
 Abot uses !Log4Net to log messages. See the app.config files in projects projects Abot.Demo or Abot.Tests.Integration to see how !Log4Net is configured. These log statements are a great way to see whats going on during a crawl. Below is from Abot.Demo project, app.config file. If this prints out to much data for you change the level from "DEBUG" to "INFO".
