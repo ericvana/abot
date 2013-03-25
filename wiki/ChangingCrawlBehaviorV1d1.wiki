@@ -2,17 +2,13 @@
 
 =Altering Crawl behavior=
 
-Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works by default. There are several ways to alter the behavior.
+Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works to suite your needs. There are several ways to alter the behavior.
 
 ===By Configuration===
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-
 ===Altering Crawl Decisions Using ICrawlDecisionMaker===
-
-Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links or download the page's raw content.
-
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl has not been exceeded and whether it should crawl the link if it is external.  
+Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links and download the page's raw content.
 
 {{{
 public interface ICrawlDecisionMaker
@@ -34,9 +30,41 @@ public interface ICrawlDecisionMaker
 }
 }}}
 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 ===Altering Crawl Decisions Using Delegates===
-aaaaaaaa
+Sometimes you dont want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic.
+
+{{{
+PoliteWebCrawler crawler = new PoliteWebCrawler();
+
+crawler.ShouldCrawlPage((pageToCrawl, crawlContext) => 
+{
+	CrawlDecision decision = new CrawlDecision();
+	if(pageToCrawl.Uri.Authority == "google.com")
+		return new CrawlDecision{ Allow = false, Reason = "Dont want to crawl google pages" };
+	
+	return decision;
+});
+
+crawler.ShouldDownloadPageContent((crawledPage, crawlContext) =>
+{
+	CrawlDecision decision = new CrawlDecision();
+	if (!crawledPage.Uri.AbsoluteUri.Contains(".com"))
+		return new CrawlDecision { Allow = false, Reason = "Only download raw page conent for .com tlds" };
+
+	return decision;
+});
+
+crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
+{
+	CrawlDecision decision = new CrawlDecision();
+	if (crawledPage.PageSizeInBytes < 100)
+		return new CrawlDecision { Allow = false, Reason = "Just crawl links in pages that have at least 100 bytes" };
+
+	return decision;
+});
+}}}
 
 
 ===Plugging In Custom Implementations===
@@ -69,6 +97,3 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
         null, 
 	null);
 }}}
-
-
-
