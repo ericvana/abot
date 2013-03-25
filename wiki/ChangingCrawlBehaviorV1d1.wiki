@@ -2,37 +2,40 @@
 
 =Altering Crawl behavior=
 
-Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works to suite your needs. There are several ways to alter the behavior.
+Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works to suite your needs.
+
+{{{
+PoliteWebCrawler crawler = new PoliteWebCrawler(
+        new CrawlConfiguration(),
+	new YourCrawlDecisionMaker(),
+	new YourThreadMgr(), 
+	new YourScheduler(), 
+	new YourHttpRequester(), 
+	new YourHyperLinkParser(), 
+	new YourMemoryManager(), 
+        new YourDomainRateLimiter,
+	new YourRobotsDotTextFinder());
+}}}
+
+Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
+
+{{{
+PoliteWebCrawler crawler = new PoliteWebCrawler(
+	null, 
+	null, 
+        null,
+        null,
+	new YourPageRequester(), 
+	new YourHyperLinkParser(), 
+	null,
+        null, 
+	null);
+}}}
 
 ===By Configuration===
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===Altering Crawl Decisions Using ICrawlDecisionMaker===
-Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links and download the page's raw content.
-
-{{{
-public interface ICrawlDecisionMaker
-{
-	/// <summary>
-	/// Decides whether the page should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPage(PageToCrawl pageToCrawl, CrawlContext crawlContext);
-
-	/// <summary>
-	/// Decides whether the page's links should be crawled
-	/// </summary>
-	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
-
-	/// <summary>
-	/// Decides whether the page's content should be downloaded
-	/// </summary>
-	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
-}
-}}}
-
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
-
-===Altering Crawl Decisions Using Delegates===
+===By Passing Custom Delegate/Funcs===
 Sometimes you dont want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic.
 
 {{{
@@ -67,33 +70,30 @@ crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
 }}}
 
 
-===Plugging In Custom Implementations===
-The PoliteWebCrawler constructor can be used to plug in your own implementations of key interfaces.  
+===Altering Crawl Decisions Using ICrawlDecisionMaker===
+Abot will call it's ICrawlDecisionMaker impl to determine whether it should crawl a page, crawl a page's links and download the page's raw content.
 
 {{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-        new CrawlConfiguration(),
-	new YourCrawlDecisionMaker(),
-	new YourThreadMgr(), 
-	new YourScheduler(), 
-	new YourHttpRequester(), 
-	new YourHyperLinkParser(), 
-	new YourMemoryManager(), 
-        new YourDomainRateLimiter,
-	new YourRobotsDotTextFinder());
+public interface ICrawlDecisionMaker
+{
+	/// <summary>
+	/// Decides whether the page should be crawled
+	/// </summary>
+	CrawlDecision ShouldCrawlPage(PageToCrawl pageToCrawl, CrawlContext crawlContext);
+
+	/// <summary>
+	/// Decides whether the page's links should be crawled
+	/// </summary>
+	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
+
+	/// <summary>
+	/// Decides whether the page's content should be downloaded
+	/// </summary>
+	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
+}
 }}}
 
-Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
-{{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-	null, 
-	null, 
-        null,
-        null,
-	new YourPageRequester(), 
-	new YourHyperLinkParser(), 
-	null,
-        null, 
-	null);
-}}}
+
+
