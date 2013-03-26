@@ -32,10 +32,10 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	null);
 }}}
 
-===Configuration===
+===Through Configuration===
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===Custom Delegate/Funcs===
+===Through Custom Delegate/Func Callbacks===
 Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic. NOTE: If the ICrawlDecisionMaker does not "allow" a page then its corresponding delegate will not be called.
 
 {{{
@@ -70,7 +70,7 @@ crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
 }}}
 
 
-===Crawl Decisions Using ICrawlDecisionMaker===
+===Through the ICrawlDecisionMaker Interface===
 The delegate shortcuts above are great to add a small amount of logic but if you are doing anything more heavy then the example above you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 {{{
@@ -92,3 +92,13 @@ public interface ICrawlDecisionMaker
 	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
 }
 }}}
+
+===Through Other Core Interfaces===
+ICrawlDecisionMaker crawlDecisionMaker,
+IThreadManager threadManager,
+IScheduler scheduler,
+IPageRequester httpRequester,
+IHyperLinkParser hyperLinkParser,
+IMemoryManager memoryManager,
+IDomainRateLimiter domainRateLimiter,
+IRobotsDotTextFinder robotsDotTextFinder
