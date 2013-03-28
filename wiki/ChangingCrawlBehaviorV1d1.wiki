@@ -1,41 +1,15 @@
 #summary Changing Crawl behavior
 
-=Altering Crawl behavior=
+=Changing Crawl Behavior=
 
 Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works to suite your needs.
 
-{{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-        new CrawlConfiguration(),
-	new YourCrawlDecisionMaker(),
-	new YourThreadMgr(), 
-	new YourScheduler(), 
-	new YourHttpRequester(), 
-	new YourHyperLinkParser(), 
-	new YourMemoryManager(), 
-        new YourDomainRateLimiter,
-	new YourRobotsDotTextFinder());
-}}}
 
-Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
 
-{{{
-PoliteWebCrawler crawler = new PoliteWebCrawler(
-	null, 
-	null, 
-        null,
-        null,
-	new YourPageRequester(), 
-	new YourHyperLinkParser(), 
-	null,
-        null, 
-	null);
-}}}
-
-===Through Configuration===
+===Changing Crawl Behavior Using Configuration===
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-===Through Custom Delegate/Func Callbacks===
+===Changing Crawl Behavior Using Custom Delegate/Func Callbacks===
 Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic. NOTE: If the ICrawlDecisionMaker does not "allow" a page then its corresponding delegate will not be called.
 
 {{{
@@ -70,8 +44,38 @@ crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
 }}}
 
 
-===Through the ICrawlDecisionMaker Interface===
-The delegate shortcuts above are great to add a small amount of logic but if you are doing anything more heavy then the example above you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
+===Changing Crawl Behavior Using Custom Implementations===
+
+{{{
+PoliteWebCrawler crawler = new PoliteWebCrawler(
+        new CrawlConfiguration(),
+	new YourCrawlDecisionMaker(),
+	new YourThreadMgr(), 
+	new YourScheduler(), 
+	new YourHttpRequester(), 
+	new YourHyperLinkParser(), 
+	new YourMemoryManager(), 
+        new YourDomainRateLimiter,
+	new YourRobotsDotTextFinder());
+}}}
+
+Passing null for any implementation will use the default. The example below will use your custom implementation for the IPageRequester and IHyperLinkParser but will use the default for all others.
+
+{{{
+PoliteWebCrawler crawler = new PoliteWebCrawler(
+	null, 
+	null, 
+        null,
+        null,
+	new YourPageRequester(), 
+	new YourHyperLinkParser(), 
+	null,
+        null, 
+	null);
+}}}
+
+==ICrawlDecisionMaker Interface==
+The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 {{{
 public interface ICrawlDecisionMaker
