@@ -7,7 +7,7 @@ Here are few things that the Abot project could use...
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
   * Let us know when you create a cool project that uses Abot
   * Submit bug fixes or features (contact me if your interested)
-  * Looking for devs familiar with mono quirks and performance gotchas to help get Abot running well on mono.
+  * Looking for devs familiar with mono quirks and performance gotchas to help get Abot running well on mono
 
 I created a new project [http://code.google.com/p/abot-contrib/ Abot-Contrib] to house any projects that utilize or add significant functionlity to abot. If you are interested in building something utilizing abot let us know.
 
