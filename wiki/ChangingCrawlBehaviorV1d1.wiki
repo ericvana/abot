@@ -200,7 +200,7 @@ public interface IPageRequester
 ===IHyperLinkParser===
 The IHyperLinkParser interface deals with parsing the links out of raw html.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs HapHyperlinkParser.cs] is the default IHyperLinkParser used by the crawler. It uses a well known html parsing library called [http://htmlagilitypack.codeplex.com/ Html Agility Pack]. There is also an alternative implementation [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs CsQueryHyperLinkParser.cs] which uses [https://github.com/jamietre/CsQuery CsQuery] to do the parsing. CsQuery uses a css style selector like jquery but all in c#. 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/HapHyperLinkParser.cs HapHyperlinkParser.cs] is the default IHyperLinkParser used by the crawler. It uses a well known html parsing library called [http://htmlagilitypack.codeplex.com/ Html Agility Pack]. There is also an alternative implementation [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CsQueryHyperLinkParser.cs CsQueryHyperLinkParser.cs] which uses [https://github.com/jamietre/CsQuery CsQuery] to do the parsing. CsQuery uses a css style selector like jquery but all in c#. 
 
 {{{
 /// <summary>
