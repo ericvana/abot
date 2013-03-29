@@ -105,13 +105,13 @@ The IThreadManager interface deals with the multithreading details. It is used b
 
 [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases. 
 
-So far here is the consensus:
+So far here are the observations:
 
   * ProducerConsumerThreadManager 
-    * Fastest when there are only 1-5 crawler instances in the same and each crawler crawls more pages than 2 times the value of MaxConcurrentThreads
-    * Slowest startup cost since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
+    * Fastest when there are 1-5 crawler instances in the same process and each crawler crawls more pages than 2 times the value of MaxConcurrentThreads
+    * Slowest startup since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
   * ManualThreadManager
-    * Fastest when there are many 20 or more crawler instances and the crawls are relatively short (20-30 pages per crawl).
+    * Fastest when there are many 20 or more crawler instances and the crawls are relatively short (20-30 or less pages per crawl).
     * Fast startup since threads are only created when work has to be done on them
   * TaskThreadManager 
     * TBD, the developer that contributed it reports that it is much faster than the ManualThreadManager however I haven't had a chance to test it under a few different circumstances.
