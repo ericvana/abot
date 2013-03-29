@@ -8,13 +8,6 @@ However, if the changes that you are going to make are out of the ordinary or yo
 ===External Tools Needed===
 *Visual Studio 2010 or greater: All code was created using Visual Studio 2012 and targeting the .NET framework 4.0. 
 
-<font color="red">
-*ILMerge*: A free console app that that merges multiple assemblies into a single assembly. This tool takes Abot.dll and combines it with all the 3rd party libs that it relies on (log4net.dll, Automapper.dll, etc...). This results in a single Abot.dll file which makes Abot's end users only have to reference a single dll file instead of 5. Abot invokes ILMerge through a Visual Studio post build command on the Abot.csproj project.
-
-  #: Download the installer from http://www.microsoft.com/en-us/download/details.aspx?id=17630.
-  #: Run the installer and TAKE NOTE OF THE INSTALLATION PATH, you may need it in the steps of "Your First build" section below. 
-</font>
-
 *Fiddler*: A free http proxy application that allows you to see the request and response of http traffic on your local machine. It also allows you to capture all the http requests during a crawl, save them, then play back that exact crawl again (!AutoResponding) using the saved .saz file. 
 
   #: Download the installer from http://www.fiddler2.com/fiddler2/version.asp
