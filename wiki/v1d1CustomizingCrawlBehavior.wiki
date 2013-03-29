@@ -101,7 +101,7 @@ public interface ICrawlDecisionMaker
 
 
 ===IThreadManager===
-The IThreadManager interface deals with the multithreading details. It is used by crawler to manage concurrent http requests. 
+The IThreadManager interface deals with the multithreading details. It is used by the crawler to manage concurrent http requests. 
 
 [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases. 
 
