@@ -75,9 +75,12 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 }}}
 
 ==ICrawlDecisionMaker Interface==
-The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
+The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. It determines what pages should be crawled, whether the raw content should be downloaded and if the links on a page should be crawled. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 {{{
+/// <summary>
+/// Determines what pages should be crawled, whether the raw content should be downloaded and if the links on a page should be crawled
+/// </summary>
 public interface ICrawlDecisionMaker
 {
 	/// <summary>
@@ -91,11 +94,15 @@ public interface ICrawlDecisionMaker
 	CrawlDecision ShouldCrawlPageLinks(CrawledPage crawledPage, CrawlContext crawlContext);
 
 	/// <summary>
-	/// Decides whether the page's content should be downloaded
+	/// Decides whether the page's content should be dowloaded
 	/// </summary>
 	CrawlDecision ShouldDownloadPageContent(CrawledPage crawledPage, CrawlContext crawlContext);
 }
 }}}
+
+
+==IThreadManager Interface==
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] is the default IThreadManager used by Abot. This class takes .
 
 ===Through Other Core Interfaces===
 ICrawlDecisionMaker crawlDecisionMaker,
