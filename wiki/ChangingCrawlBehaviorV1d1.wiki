@@ -4,9 +4,6 @@
 
 Abot was designed to be as pluggable as possible. This allows you to easily alter the way it works to suite your needs.
 
-
-
-==Changing Crawl Behavior Using Configuration==
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
 ==Changing Crawl Behavior Using Custom Delegate/Func Callbacks==
