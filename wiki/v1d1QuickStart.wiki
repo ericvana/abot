@@ -145,10 +145,10 @@ else
 crawler.CrawlBag.MyFoo = new Foo();
 ...
 }}}
-Now the Foo instance is accessible anywhere from the crawl context
 {{{
 void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 {
+        //The Foo instance is accessible anywhere from the crawl context
 	CrawlContext context = e.CrawlContext;
         context.CrawlBag.MyFoo.Bar();
 }
