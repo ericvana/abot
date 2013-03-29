@@ -74,8 +74,8 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	null);
 }}}
 
-==ICrawlDecisionMaker Interface==
-The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. It determines what pages should be crawled, whether the raw content should be downloaded and if the links on a page should be crawled. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
+==ICrawlDecisionMaker==
+The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 {{{
 /// <summary>
@@ -101,15 +101,36 @@ public interface ICrawlDecisionMaker
 }}}
 
 
-==IThreadManager Interface==
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] is the default IThreadManager used by Abot. This class takes .
+==IThreadManager==
+The IThreadManager interface deals with concurrency. If you want to 
 
-===Through Other Core Interfaces===
-ICrawlDecisionMaker crawlDecisionMaker,
-IThreadManager threadManager,
-IScheduler scheduler,
-IPageRequester httpRequester,
-IHyperLinkParser hyperLinkParser,
-IMemoryManager memoryManager,
-IDomainRateLimiter domainRateLimiter,
-IRobotsDotTextFinder robotsDotTextFinder
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases however both are stable enough to use under the most common scenarios. 
+
+{{{
+/// <summary>
+/// Handles the multithreading implementation details
+/// </summary>
+public interface IThreadManager : IDisposable
+{
+	/// <summary>
+	/// Max number of threads to use.
+	/// </summary>
+	int MaxThreads { get; }
+
+	/// <summary>
+	/// Will perform the action asynchrously on a seperate thread
+	/// </summary>
+	/// <param name="action">The action to perform</param>
+	void DoWork(Action action);
+
+	/// <summary>
+	/// Whether there are running threads
+	/// </summary>
+	bool HasRunningThreads();
+
+	/// <summary>
+	/// Abort all running threads
+	/// </summary>
+	void AbortAll();
+}
+}}}
