@@ -178,7 +178,7 @@ public interface IScheduler
 
 
 ==IPageRequester==
-The IPageRequester interface making the raw http requests.
+The IPageRequester interface deals with making the raw http requests.
 
 [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs PageRequester.cs] is the default IPageRequester used by the crawler. 
 
@@ -194,5 +194,23 @@ public interface IPageRequester
 	/// Make an http web request to the url and download its content based on the param func decision
 	/// </summary>
 	CrawledPage MakeRequest(Uri uri, Func<CrawledPage, CrawlDecision> shouldDownloadContent);
+}
+}}}
+
+==IHyperLinkParser==
+The IHyperLinkParser interface deals with making the raw http requests.
+
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs HapHyperlinkParser.cs] is the default IHyperLinkParser used by the crawler. It uses a well known html parsing library called [http://htmlagilitypack.codeplex.com/ Html Agility Pack]. There is also an alternative implementation [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs CsQueryHyperLinkParser.cs] which uses [https://github.com/jamietre/CsQuery CsQuery] to do the parsing. CsQuery uses a css style selector like jquery but all in c#. 
+
+{{{
+/// <summary>
+/// Handles parsing hyperlikns out of the raw html
+/// </summary>
+public interface IHyperLinkParser
+{
+	/// <summary>
+	/// Parses html to extract hyperlinks, converts each into an absolute url
+	/// </summary>
+	IEnumerable<Uri> GetLinks(CrawledPage crawledPage);
 }
 }}}
