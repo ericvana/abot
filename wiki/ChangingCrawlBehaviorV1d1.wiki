@@ -211,3 +211,26 @@ public interface IHyperLinkParser
 	IEnumerable<Uri> GetLinks(CrawledPage crawledPage);
 }
 }}}
+
+===IMemoryManager===
+The IMemoryManager handles memory monitoring. This feature is still experimental and could be removed in a future release if found to be unreliable. 
+
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/MemoryManager.cs MemoryManager.cs]. 
+
+{{{
+/// <summary>
+/// Handles memory monitoring/usage
+/// </summary>
+public interface IMemoryManager : IMemoryMonitor, IDisposable
+{
+	/// <summary>
+	/// Whether the current process that is hosting this instance is allocated/using above the param value of memory in mb
+	/// </summary>
+	bool IsCurrentUsageAbove(int sizeInMb);
+
+	/// <summary>
+	/// Whether there is at least the param value of available memory in mb
+	/// </summary>
+	bool IsSpaceAvailable(int sizeInMb);
+}
+}}}
