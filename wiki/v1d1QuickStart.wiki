@@ -129,16 +129,6 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  #: Run the crawl
-{{{
-CrawlResult result = crawler.Crawl(new Uri("http://localhost:1111/"));
-
-if (result.ErrorOccurred)
-	Console.WriteLine("Crawl of {0} completed with error: {1}", result.RootUri.AbsoluteUri, result.ErrorMessage);
-else
-	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
-
-}}}
   #: You Can Pass In A Custom Object
 {{{
 ...
@@ -152,6 +142,16 @@ void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 	CrawlContext context = e.CrawlContext;
         context.CrawlBag.MyFoo.Bar();
 }
+}}}
+  #: Run the crawl
+{{{
+CrawlResult result = crawler.Crawl(new Uri("http://localhost:1111/"));
+
+if (result.ErrorOccurred)
+	Console.WriteLine("Crawl of {0} completed with error: {1}", result.RootUri.AbsoluteUri, result.ErrorMessage);
+else
+	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
+
 }}}
 
 
