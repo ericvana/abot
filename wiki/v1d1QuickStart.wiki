@@ -140,7 +140,6 @@ else
 
 }}}
   #: You Can Pass In A Custom Object
-You can pass in as many custom objects as you want to the crawler by using the dynamic type CrawlBag.
 {{{
 ...
 crawler.CrawlBag.MyFoo = new Foo();
