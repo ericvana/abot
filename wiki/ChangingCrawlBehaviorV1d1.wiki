@@ -215,7 +215,7 @@ public interface IHyperLinkParser
 ===IMemoryManager===
 The IMemoryManager handles memory monitoring. This feature is still experimental and could be removed in a future release if found to be unreliable. 
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/MemoryManager.cs MemoryManager.cs]. 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/MemoryManager.cs MemoryManager.cs] is the default implementation used by the crawler. 
 
 {{{
 /// <summary>
