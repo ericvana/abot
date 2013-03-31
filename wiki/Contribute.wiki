@@ -1,7 +1,7 @@
 #summary How you can contribute to Abot.
 #labels Featured
 
-==Some Specific Contributions That Abot Needs==
+==Specific Contributions That Abot Needs==
   * Contributor familiar with mono environment to keep Abot running well on mono
   * Contributor to setup a build server (ccnet)
   * Some free dedicated or virtual dedicated hardware for build server/testing
