@@ -131,7 +131,7 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 }}}
   #: Add any number of custom objects to the dynamic crawl bag. These objects will be available in the CrawlContext.CrawlBag object.
 {{{
-crawler = new PoliteWebCrawler();
+PoliteWebCrawler crawler = new PoliteWebCrawler();
 crawler.CrawlBag.MyFoo1 = new Foo();
 crawler.CrawlBag.MyFoo2 = new Foo();
 crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
