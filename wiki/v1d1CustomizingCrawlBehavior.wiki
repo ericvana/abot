@@ -194,7 +194,7 @@ public interface IScheduler
 ===IPageRequester===
 The IPageRequester interface deals with making the raw http requests.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs PageRequester.cs] is the default IPageRequester used by the crawler. 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/PageRequester.cs PageRequester.cs] is the default IPageRequester used by the crawler. 
 
 {{{
 public interface IPageRequester
