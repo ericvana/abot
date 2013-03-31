@@ -18,7 +18,7 @@ However, if the changes that you are going to make are out of the ordinary or yo
 
 
 ===Your First Build===
-  #: Checkout the latest from http://code.google.com/p/abot/source/checkout or go to the Downloads tab and retreive the latest source zip
+  #: Checkout the latest from http://code.google.com/p/abot/source/checkout or go to the Downloads tab and retrieve the latest source zip
   #: Open solution in Visual Studio
   #: Build the solution normally
 
