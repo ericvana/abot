@@ -3,8 +3,8 @@
 
 ==Specific Contributions==
   * Contributors to setup a continuous build server (ccnet preferred but not mandatory)
-  * Contributors to setup automated performance tests. This would make it easy for use to determine which configuration of Abot work best/worst in several different scenarios
-  * Some free dedicated or virtual dedicated hardware for build server, distributed crawl testing, etc..
+  * Contributors to setup automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
+  * Some free dedicated or virtual dedicated hardware for a build server, deployment hub, distributed crawl testing, etc..
   * Contributors familiar with mono environment to get/keep Abot running well on mono
 
 ==General Contributions==
