@@ -6,7 +6,7 @@ Abot was designed to be as pluggable as possible. This allows you to easily alte
 
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the QuickStart page for examples on the different ways Abot can be configured.
 
-==Custom Delegate/Func Callbacks==
+==CrawlDecision Callbacks==
 Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic. NOTE: If the ICrawlDecisionMaker does not "allow" a page then its corresponding delegate will not be called.
 
 {{{
@@ -71,6 +71,8 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
         null, 
 	null);
 }}}
+
+The following are explanations of each interface that PoliteWebCrawler relies on to do the real work.
 
 ===ICrawlDecisionMaker===
 The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. The crawler calls this implementation to see whether a page should be crawled, whether the page's content should be downloaded and whether a crawled page's links should be crawled.
