@@ -151,9 +151,9 @@ public interface IThreadManager : IDisposable
 
 
 ===IScheduler===
-The IScheduler interface deals with managing what pages need to be crawled. The crawler gives the the links it finds and gets the pages to crawl from teh IScheduler implementation. A common use cases for writing your own implementation might be to distribute crawls across multiple machines which could be managed by a DistributedScheduler.
+The IScheduler interface deals with managing what pages need to be crawled. The crawler gives the links it finds to and gets the pages to crawl from the IScheduler implementation. A common use cases for writing your own implementation might be to distribute crawls across multiple machines which could be managed by a DistributedScheduler.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs FifoScheduler.cs] is the default IScheduerl used by the crawler. It uses a simple queue to crawl links in a first come first server basis. 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs FifoScheduler.cs] is the default IScheduler used by the crawler. It uses a simple queue to crawl found links in a first found first crawled basis. 
 
 {{{
 /// <summary>
