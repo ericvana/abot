@@ -4,7 +4,7 @@
 ==Specific Contributions==
   * Contributor familiar with mono environment to get/keep Abot running well on mono
   * Contributor to setup a continuous build server (ccnet preferred but not mandatory)
-  * Some free dedicated or virtual dedicated hardware for build server/testing
+  * Some free dedicated or virtual dedicated hardware for build server, distributed crawl testing, etc..
 
 ==General Contributions==
   * Spread the word on blogs/websites and tell others why Abot is great
