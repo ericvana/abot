@@ -59,7 +59,7 @@
   </abot>
   </configuration>
     }}}
-    #: Create an instance of Abot.Poco.!CrawlConfiguration. This approach ignores the app.config values completely. Every app.config value has the same named property on the !CrawlConfiguration object)
+    #: Create an instance of Abot.Poco.!CrawlConfiguration. This approach ignores the app.config values completely. Every app.config value has a property with the same name on the !CrawlConfiguration object)
     {{{
 CrawlConfiguration crawlConfig = new CrawlConfiguration();
 crawlConfig.CrawlTimeoutSeconds = 100;
