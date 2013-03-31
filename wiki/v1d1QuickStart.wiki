@@ -129,7 +129,7 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  #: Add Your Custom To The Crawl Bag
+  #: Add Your Any Number Of Custom Objects To The Crawl Bag
 {{{
 ...
 crawler.CrawlBag.MyFoo = new Foo();
