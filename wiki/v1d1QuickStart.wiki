@@ -129,7 +129,7 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  #: You Can Pass In A Custom Object
+  #: Add Your Custom To The Crawl Bag
 {{{
 ...
 crawler.CrawlBag.MyFoo = new Foo();
@@ -138,7 +138,7 @@ crawler.CrawlBag.MyFoo = new Foo();
 {{{
 void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 {
-        //The Foo instance is accessible anywhere from the crawl context
+        //Get your Foo instance from the CrawlContext object
 	CrawlContext context = e.CrawlContext;
         context.CrawlBag.MyFoo.Bar();
 }
