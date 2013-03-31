@@ -1,9 +1,10 @@
 #summary How you can contribute to Abot.
 #labels Featured
 
-==Consider Making A Donation==
-A donation of any amount would be greatly appreciated. <br />
-[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
+==Some Specific Contributions That Abot Needs==
+  * Contributor familiar with mono environment to keep Abot running well on mono
+  * Contributor to setup a build server (ccnet)
+  * Some free dedicated or virtual dedicated hardware for build server/testing
 
 ==General Contributions==
   * Spread the word on blogs/websites and tell others why Abot is great
@@ -12,9 +13,8 @@ A donation of any amount would be greatly appreciated. <br />
   * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
   * Let us know when you create a cool project that uses Abot so we can promote eachother
 
-==Some Specific Contributions That Abot Needs==
-  * Contributer familiar with mono to keep Abot running well on mono
-  * Build server
-
+==Consider Making A Donation==
+A donation of any amount would be greatly appreciated. <br />
+[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
 
 Please reach out if you have other contribution ideas by emailing abotcrawler@gmail.com.
