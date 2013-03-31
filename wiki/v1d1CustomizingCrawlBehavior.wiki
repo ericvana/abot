@@ -110,12 +110,12 @@ So far here are the observations:
 
   * ProducerConsumerThreadManager 
     * Fastest when there are 1-5 crawler instances in the same process and each crawler crawls more pages than 2 times the value of MaxConcurrentThreads
-    * Slowest startup since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
+    * Slowest startup time since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
   * ManualThreadManager
-    * Fastest when there are many 20 or more crawler instances and the crawls are relatively short (20-30 or less pages per crawl).
+    * Fastest when there are 20 or more crawler instances and the crawls are relatively short (20-30 or less pages per crawl).
     * Fast startup since threads are only created when work has to be done on them
   * TaskThreadManager 
-    * TBD, the developer that contributed it reports that it is much faster than the ManualThreadManager however I haven't had a chance to test it under a few different circumstances.
+    * TBD, the developer that contributed it reports that it is slower than the ProducerConsumerThreadManager but faster than the ManualThreadManager. I haven't had a chance to test it under a few different circumstances.
 
 
 
