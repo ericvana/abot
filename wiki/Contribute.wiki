@@ -9,6 +9,7 @@ Here are few things that the Abot project could use...
   * Submit bug fixes or features (contact me if your interested)
   * A dev familiar with mono quirks and performance gotchas to help get Abot running well on mono
   * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
+  * Some free server space/access (build server, test distributed crawling, etc..)
 
 ==Consider Making A Donation==
 A donation of any amount would be greatly appreciated. <br />
