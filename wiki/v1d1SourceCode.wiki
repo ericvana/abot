@@ -6,7 +6,7 @@ The most common way to customize crawl behavior is by extending classes and over
 However, if the changes that you are going to make are out of the ordinary or you want to contribute a bug fix or feature then you will want to work directly with Abot's source code. Below you will find what you need to get the solution building/running on your local machine.
 
 ===External Tools Needed===
-*Visual Studio 2010 or greater: All code was created using Visual Studio 2012 and targeting the .NET framework 4.0. 
+*Visual Studio 2010 or greater*: All code was created using Visual Studio 2012 and targeting the .NET framework 4.0. 
 
 *Fiddler*: A free http proxy application that allows you to see the request and response of http traffic on your local machine. It also allows you to capture all the http requests during a crawl, save them, then play back that exact crawl again (!AutoResponding) using the saved .saz file. 
 
