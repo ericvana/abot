@@ -42,7 +42,8 @@ crawler.ShouldCrawlPageLinks((crawledPage, crawlContext) =>
 
 
 ==Custom Implementations==
-
+PoliteWebCrawler accepts all its dependencies through it's constructor.
+ 
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler(
         new CrawlConfiguration(),
