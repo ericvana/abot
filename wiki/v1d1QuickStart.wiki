@@ -129,17 +129,18 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  #: Add Your Any Number Of Custom Objects To The Crawl Bag. These objects will be available in the CrawlContext object as an EventArg.
+  #: Add any number of custom objects to the dynamic crawl bag. These objects will be available in the CrawlContext.CrawlBag object.
 {{{
-...
+crawler = new PoliteWebCrawler();
 crawler.CrawlBag.MyFoo1 = new Foo();
 crawler.CrawlBag.MyFoo2 = new Foo();
+crawler.PageCrawlStartingAsync += crawler_ProcessPageCrawlStarting;
 ...
 }}}
 {{{
 void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 {
-        //Get your Foo instance from the CrawlContext object
+        //Get your Foo instances from the CrawlContext object
 	CrawlContext context = e.CrawlContext;
         context.CrawlBag.MyFoo1.Bar();
         context.CrawlBag.MyFoo2.Bar();
