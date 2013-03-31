@@ -3,7 +3,7 @@
 
 ==Specific Contributions==
   * Contributor familiar with mono environment to get/keep Abot running well on mono
-  * Contributor to setup a build server (ccnet)
+  * Contributor to setup a continuous build server (ccnet preferred but not mandatory)
   * Some free dedicated or virtual dedicated hardware for build server/testing
 
 ==General Contributions==
