@@ -2,10 +2,10 @@
 #labels Featured
 
 ==Currently Need==
-  * Contributors to setup a continuous build server (ccnet preferred but not mandatory)
-  * Contributors to setup automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
-  * Some free dedicated or virtual dedicated hardware for a build server, deployment hub, distributed crawl testing, etc..
-  * Contributors familiar with mono environment to get/keep Abot running well on mono
+  * Continuous build server setup (ccnet preferred but not mandatory)
+  * Automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
+  * Free dedicated or virtual dedicated hardware (mostly Windows) for the build server, deployment hub, distributed crawl testing, etc..
+  * Contributors familiar with the mono environment to get/keep Abot running well on mono
 
 ==Always Need==
   * Spread the word on blogs/websites and tell others why Abot is great
