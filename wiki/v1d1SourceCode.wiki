@@ -20,10 +20,6 @@ However, if the changes that you are going to make are out of the ordinary or yo
 ===Your First Build===
   #: Checkout the latest from http://code.google.com/p/abot/source/checkout or go to the Downloads tab and retreive the latest source zip
   #: Open solution in Visual Studio
-  #: If ILMerge installation path is not "C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe", you must...
-    #: Right click the Abot project and select properties
-    #: Select Build Events section
-    #: In the "Post-build event command line" textbox replace "C:\Program Files (x86)\Microsoft\ILMerge\ilmerge.exe" with your ILMerge installation path
   #: Build the solution normally
 
 ===Solution Overview===
