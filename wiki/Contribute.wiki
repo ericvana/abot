@@ -8,6 +8,7 @@
   * Contributors familiar with the mono environment to get/keep Abot running well on mono
 
 ==Always Need==
+  * Donations (See section below)
   * Spread the word on blogs/websites and tell others why Abot is great
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
   * Submit bug fixes or features (contact me if your interested)
