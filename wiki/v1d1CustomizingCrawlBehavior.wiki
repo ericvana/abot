@@ -289,9 +289,7 @@ public interface IRobotsDotTextFinder
 {
 	/// <summary>
 	/// Finds the robots.txt file using the rootUri. 
-	/// If rootUri is http://yahoo.com, it will look for robots at http://yahoo.com/robots.txt.
-	/// If rootUri is http://music.yahoo.com, it will look for robots at http://music.yahoo.com/robots.txt
-	/// </summary>null</returns>
+        /// 
 	IRobotsDotText Find(Uri rootUri);
 }
 }}}
