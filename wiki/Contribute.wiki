@@ -1,15 +1,14 @@
 #summary How you can contribute to Abot.
 #labels Featured
 
-=Contribute=
-Here are few things that the Abot project could use...
+==Contribute==
   * Spread the word on blogs/websites and tell others why Abot is great
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
-  * Let us know when you create a cool project that uses Abot so we can help you promote it
   * Submit bug fixes or features (contact me if your interested)
   * A dev familiar with mono quirks and performance gotchas to help get Abot running well on mono
   * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
   * Some free server space/access (build server, test distributed crawling, etc..)
+  * Let us know when you create a cool project that uses Abot so we can promote eachother
 
 ==Consider Making A Donation==
 A donation of any amount would be greatly appreciated. <br />
