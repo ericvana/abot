@@ -54,7 +54,7 @@ This will tell Abot to only crawl up to 10 pages and that it must wait 1 second 
   #: Then hit ctrl + F5 to see the console app run.
   #: When prompted for a url enter whatever site you want to crawl (must begin with "http")
   #: Press enter
-  #: View the file output at Abot.Demo/bin/debug/log.txt file for all the output.
+  #: View the Abot.Demo/bin/debug/log.txt file for all the output.
 
 If you want to get a real feel for Abot's speed you can safely set it up to crawl the SiteSimulator test site. Change the config values to...
 
@@ -79,8 +79,7 @@ If you want to get a real feel for Abot's speed you can safely set it up to craw
   #: Then hit ctrl + F5 to see the console app run.
   #: When prompted for a url enter: http://localhost:1111/
   #: Press enter
-  #: View the file output at Abot.Demo/bin/debug/log.txt file for all the output.
-
+  #: View the Abot.Demo/bin/debug/log.txt file for all the output.
 
 
 ===How to run Abot.Tests.Unit===
