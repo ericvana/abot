@@ -31,8 +31,24 @@ Both Abot.Tests.Unit and Abot.Tests.Integration rely on this project to be runni
 *Abot.Tests.Integration*: Tests the end to end crawl behavior. These are real crawls, no mocks/stubs/etc.. Abot.!SiteSimulator site must be running for tests to pass.
 
 ===How to run Abot.Demo===
-  #: Right click on the Abot.!SiteSimulator project and set it as the "startup project". 
-  #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
+The demo project has a few config values set greatly limit Abot's speed.  This is to make sure you don't get banned by your isp provider or blocked by the sites you are crawling while checking out how Abot works. These setting are..
+
+{{{
+<abot>
+    <crawlBehavior 
+      ...(excluded)
+      maxPagesToCrawl="10" 
+      ...(excluded)
+      />
+    <politeness 
+      ...(excluded)
+      minCrawlDelayPerDomainMilliSeconds="1000"/>
+      ...(excluded)
+  </abot>  
+}}}
+
+
+
   #: Right click on the Abot.Demo project and set it as the "startup project"
   #: Then hit ctrl + F5 to see the console app run.
   #: View the file output at Abot.Demo/bin/debug/log.txt file for all the output.
