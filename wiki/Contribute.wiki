@@ -1,18 +1,19 @@
 #summary How you can contribute to Abot.
 #labels Featured
 
-==Specific Contributions==
+==Currently Need==
   * Contributors to setup a continuous build server (ccnet preferred but not mandatory)
   * Contributors to setup automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
   * Some free dedicated or virtual dedicated hardware for a build server, deployment hub, distributed crawl testing, etc..
   * Contributors familiar with mono environment to get/keep Abot running well on mono
 
-==General Contributions==
+==Always Need==
   * Spread the word on blogs/websites and tell others why Abot is great
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
   * Submit bug fixes or features (contact me if your interested)
   * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
-  * Let us know when you create a cool project that uses Abot so we can promote eachother
+  * Let us know when you create a cool project that uses Abot so we know
+  * Contact to let us know what we are doing right/wrong. Dont just grab and go.
 
 ==Consider Making A Donation==
 A donation of any amount would be greatly appreciated. <br />
