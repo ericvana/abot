@@ -56,7 +56,7 @@ This will tell Abot to only crawl up to 10 pages and that it must wait 1 second 
   #: Press enter
   #: View the Abot.Demo/bin/debug/log.txt file for all the output.
 
-If you want to get a real feel for Abot's speed you can safely set it up to crawl the SiteSimulator test site. Change the config values to...
+If you want to get a real feel for Abot's speed you can safely set it up to crawl the SiteSimulator test site. This site is hosted on your machine and will not generate any http traffic beyond your local network.  To do so change the config values to...
 
 {{{
 <abot>
