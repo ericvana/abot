@@ -52,7 +52,7 @@ This will tell Abot to only crawl up to 10 pages and that it must wait 1 second 
 
   #: Right click on the Abot.Demo project and set it as the "startup project"
   #: Then hit ctrl + F5 to see the console app run.
-  #: When prompted for a url enter whatever site you want to crawl (must begin with "http")
+  #: When prompted for a url enter whatever site you want to crawl (must begin with "http://" or "https://")
   #: Press enter
   #: View the Abot.Demo/bin/debug/log.txt file for all the output.
 
