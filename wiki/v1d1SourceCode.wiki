@@ -85,12 +85,12 @@ If you want to get a real feel for Abot's speed you can safely set it up to craw
 ===How to run Abot.Tests.Unit===
   #: Right click on the Abot.!SiteSimulator project and set it as the "startup project". 
   #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
-  #: Run Abot.Tests.Unit using NUnit app or a tool like !TestDriven
+  #: Run Abot.Tests.Unit tests.
 
 ===How to run Abot.Tests.Integration===
   #: Verify "External Tools" defined above are installed and working
   #: Right clicking on the Abot.!SiteSimulator project and set it as the "startup project". 
   #: Then hit ctrl + F5 to run it, You should see a simple webpage with a few links on http://localhost:1111/
   #: Run fiddler with !AutoResponder feature enabled
-  #: Run Abot.Tests.Integration using NUnit app or a tool like !TestDriven
+  #: Run Abot.Tests.Integration tests.
   #: View the file output at Abot.Tests.Integration/bin/debug/log.txt file for all the output.
