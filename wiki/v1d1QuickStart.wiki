@@ -16,7 +16,7 @@
   using Abot.Core;
   using Abot.Poco;
   }}}
-  #: Configure Abot using one of the following methods. Look at Abot.Poco.!CrawlConfiguration comments to see what effect each config value has on the crawl [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here].
+  #: Configure Abot using ONE of the following methods. Look at Abot.Poco.!CrawlConfiguration comments to see what effect each config value has on the crawl [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here].
     #: Add the following to the app.config of the assembly using the library
     {{{
 <?xml version="1.0"?>
