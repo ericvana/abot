@@ -10,15 +10,15 @@
   #: Nuget package coming soon
 
 ===What Do Each Of These DLLs Do?===
-  # Abot.dll: All of Abots functionality. The crawler, components, utilities and pocos.
-  # AutoMapper.dll: Used to move values from one object to another. Specifically used to convert from PageToCrawl to CrawledPage and a few other convertions.
-  # Commoner.Core.dll: A set of very common utilities. Specifically used in the unit tests to set private variables through reflection.
-  # CsQuery.dll: By default not used by Abot. The main purpose of this library is to expose a lazy loaded property on CrawlPage.CsQueryDocument that anyone can use to do some heavy duty html parsing in a jquery-like interface.
-  # HtmlAgilityPack.dll: Well know html parsing library. Used by the default IHyperlinkParser. Also a lazy loaded property pm CrawlPage.HtmlDocument that anyone can use to do some heavy duty html parsing. NOTE: This binary is patched to avoid a common StackOverflowException. Read mere about it [http://code.google.com/p/abot/issues/detail?id=77 here].
-  # log4net.dll: Provides logging functionality that is configurable through an xml file.
-  # Moq.dll: Mocking framework used in the unit tests.
-  # nunit.dll: Unit testing framework used in the unit tests.
-  # Robots.dll: Handles parsing robots.txt files.
+  # *Abot.dll:* All of Abots functionality. The crawler, components, utilities and pocos.
+  # *AutoMapper.dll:* Used to move values from one object to another. Specifically used to convert from PageToCrawl to CrawledPage and a few other convertions.
+  # *Commoner.Core.dll:* A set of very common utilities. Specifically used in the unit tests to set private variables through reflection.
+  # *CsQuery.dll:* By default not used by Abot. The main purpose of this library is to expose a lazy loaded property on CrawlPage.CsQueryDocument that anyone can use to do some heavy duty html parsing in a jquery-like interface.
+  # *HtmlAgilityPack.dll:* Well know html parsing library. Used by the default IHyperlinkParser. Also a lazy loaded property pm CrawlPage.HtmlDocument that anyone can use to do some heavy duty html parsing. NOTE: This binary is patched to avoid a common StackOverflowException. Read mere about it [http://code.google.com/p/abot/issues/detail?id=77 here].
+  # *log4net.dll:* Provides logging functionality that is configurable through an xml file.
+  # *Moq.dll:* Mocking framework used in the unit tests.
+  # *nunit.dll:* Unit testing framework used in the unit tests.
+  # *Robots.dll:* Handles parsing robots.txt files.
 
 ===Using Abot===
   #: Add the following using statements.. 
