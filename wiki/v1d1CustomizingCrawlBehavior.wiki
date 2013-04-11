@@ -277,7 +277,7 @@ public interface IDomainRateLimiter
 
 
 ===IRobotsDotTextFinder===
-The IRobotsDotTextFinder is responsible for making finding and building the robots.txt abstraction. 
+The IRobotsDotTextFinder is responsible for retrieving the robots.txt file for every domain (if isRespectRobotsDotTextEnabled="true") and building the robots.txt abstraction which implements the IRobotsDotText interface. 
 
 [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/RobotsDotTextFinder.cs RobotsDotTextFinder.cs] is the default implementation used by the crawler. 
 
