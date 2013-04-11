@@ -9,7 +9,7 @@
   #: Extract the dlls from the zip file and add a reference for each in your project
   #: Nuget package coming soon
 
-====Dlls===
+===Binaries In Bin Zip===
   # Abot.dll: All of Abots functionality. The crawler, components, utilities and pocos.
   # AutoMapper.dll: Used to move values from one object to another. Specifically used to convert from PageToCrawl to CrawledPage and a few other convertions.
   # Commoner.Core.dll: A set of very common utilities. Specifically used in the unit tests to set private variables through reflection.
