@@ -1,4 +1,7 @@
-Still working on this page....
+#summary Describes Abot's dependencies
+
+=Dependencies=
+Abot utilizes several external libraries. If you are using the most simple implementation of Abot (like the quickstart demo) you will not need to reference any directly..... 
 
 ===What Do Each Of These DLLs Do?===
   # *Abot.dll:* All of Abots functionality. The crawler, components, utilities and pocos.
