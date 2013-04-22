@@ -14,7 +14,7 @@
   * Submit bug fixes or features (contact me if your interested)
   * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
   * Let us know when you create a cool project that uses Abot so we know
-  * Contact to let us know what we are doing right/wrong. Dont just grab and go.
+  * Let us know what we are doing right/wrong. Dont just grab and go.
 
 ==Consider Making A Donation==
 A donation of any amount would be greatly appreciated. <br />
