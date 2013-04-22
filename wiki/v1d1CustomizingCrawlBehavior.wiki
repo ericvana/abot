@@ -113,10 +113,11 @@ So far here are the observations:
   * ManualThreadManager
     * Seems to be the fastest all around thread manager.
     * Fastest startup since threads are only created when work has to be done on them
-    * Creates real thread object directory. A bit crude but outperforms others.
+    * Creates real thread objects directly. A bit crude but outperforms others.
   * TaskThreadManager 
     * Initial tests show that it is only a little slower than the ManualThreadManager impl.
-    * Uses tpl/threadpool to execute work so this implementation is the most "Correct" way to implement this interface. It is not the default just due to the ManualThreadManager being tested more to date. TaskThreadManager will likely become the default in the next release.
+    * Uses tpl/threadpool to execute work so this implementation is the most "Correct" way to implement this interface. 
+    * Will likely become the default implementation in the next major release.
   * ProducerConsumerThreadManager 
     * Seems to be the slowest so far.
     * Slowest startup time since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
