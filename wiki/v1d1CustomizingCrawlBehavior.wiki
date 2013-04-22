@@ -106,18 +106,20 @@ public interface ICrawlDecisionMaker
 ===IThreadManager===
 The IThreadManager interface deals with the multithreading details. It is used by the crawler to manage concurrent http requests. 
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases. 
+[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases. 
 
 So far here are the observations:
 
-  * ProducerConsumerThreadManager 
-    * Fastest when there are 1-5 crawler instances in the same process and each crawler crawls more pages than 2 times the value of MaxConcurrentThreads
-    * Slowest startup time since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
   * ManualThreadManager
-    * Fastest when there are 20 or more crawler instances and the crawls are relatively short (20-30 or less pages per crawl).
-    * Fast startup since threads are only created when work has to be done on them
+    * Seems to be the fastest all around thread manager.
+    * Fastest startup since threads are only created when work has to be done on them
+    * Creates real thread object directory. A bit crude but outperforms others.
   * TaskThreadManager 
-    * TBD, the developer that contributed it reports that it is slower than the ProducerConsumerThreadManager but faster than the ManualThreadManager. I haven't had a chance to test it under a few different circumstances.
+    * Initial tests show that it is only a little slower than the ManualThreadManager impl.
+    * Uses tpl/threadpool to execute work so this implementation is the most "Correct" way to implement this interface. It is not the default just due to the ManualThreadManager being tested more to date. TaskThreadManager will likely become the default in the next release.
+  * ProducerConsumerThreadManager 
+    * Seems to be the slowest so far.
+    * Slowest startup time since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
 
 
 
