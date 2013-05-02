@@ -14,7 +14,7 @@ However, if the changes that you are going to make are out of the ordinary or yo
   #: Run the installer.
   #: Download RecordedCrawls.saz file from http://abot.googlecode.com/files/RecordedCrawls.saz
   #: Open fiddler
-  #: Select the "!AutoResponder" tab and import the wvtesting2.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
+  #: Select the "!AutoResponder" tab and import the RecordedCrawls.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
 
 
 ===Your First Build===
