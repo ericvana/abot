@@ -1,4 +1,5 @@
 #summary How to get started working with Abot's source code
+#labels Deprecated
 
 =Working With The Source Code=
 Most common changes/extensions can be done just by extending classes and overriding methods or creating a custom implementation of a core interface. All this can be done outside of Abot's source code. However, if the changes that you are going to make are out of the ordinary or you want to contribute a bug fix or feature then you will want to work directly with Abot's source code. Below you will find what you need to get the solution building/running on your local machine.
