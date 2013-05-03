@@ -1,4 +1,5 @@
 #summary How to get rolling using Abot quickly
+#labels Deprecated
 
 =QuickStart=
 
