@@ -1,4 +1,5 @@
 #summary Open Source C# web crawler built for speed and flexibility
+#labels Deprecated
 
 = Abot C# Web Crawler =
 
