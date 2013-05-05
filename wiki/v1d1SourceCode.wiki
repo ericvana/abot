@@ -11,12 +11,16 @@ However, if the changes that you are going to make are out of the ordinary or yo
 
 *Fiddler*: A free http proxy application that allows you to see the request and response of http traffic on your local machine. It also allows you to capture all the http requests during a crawl, save them, then play back that exact crawl again (!AutoResponding) using the saved .saz file. 
 
-  #: Download the installer from http://www.fiddler2.com/fiddler2/version.asp
+  #: Download the installer [http://www.fiddler2.com/fiddler2/version.asp here]
   #: Run the installer.
-  #: Download RecordedCrawls.saz file from http://abot.googlecode.com/files/RecordedCrawls.saz
+  #: Download the RecordedCrawls.saz file [http://abot.googlecode.com/files/RecordedCrawls.saz here]
   #: Open fiddler
   #: Select the "!AutoResponder" tab and import the RecordedCrawls.saz file and check all checkbox options. This will playback the recorded crawl when fiddler is running. 
 
+*NUnit Test Adapter*: sdsd
+
+  #: Download the test adapter to run nunit tests from inside visual studio [http://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d here]
+  #: Another option is using Testdriven.net plugin (my favorite) [http://testdriven.net/ here]
 
 ===Your First Build===
   #: Checkout the latest from http://code.google.com/p/abot/source/checkout or go to the Downloads tab and retrieve the latest source zip
