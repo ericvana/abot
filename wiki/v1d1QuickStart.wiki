@@ -22,7 +22,7 @@
 <?xml version="1.0"?>
 <configuration>
   <configSections>
-    <section name="abot" type="Abot.Core.ConfigurationSectionHandler, Abot"/>
+    <section name="abot" type="Abot.Core.AbotConfigurationSectionHandler, Abot"/>
   </configSections>
 
   <abot>
