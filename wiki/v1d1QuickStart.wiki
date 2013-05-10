@@ -159,24 +159,23 @@ else
 
 
 
-== Logging ==
+== Logging (Optional) ==
 
 Abot uses !Log4Net to log messages. These log statements are a great way to see whats going on during a crawl. However, if you dont want to use log4net you can skip this section. 
 
-Below is from Abot.Demo project, app.config file. If this prints out to much data for you change the level from "DEBUG" to "INFO".
+Below is an example log4net configuration. Read more abot log4net at http://logging.apache.org/log4net/release/manual/introduction.html.
 
-Be sure to call the following method to tell log4net to read in the config file. This call must happen before Abot's Crawl(Uri) method.
+Add using statement for log4net.
 {{{
 using log4net.Config;
 }}}
 
+Be sure to call the following method to tell log4net to read in the config file. This call must happen before Abot's Crawl(Uri) method, otherwise you wont see any output.
 {{{
 XmlConfigurator.Configure();
-...
-//must be called before the crawl command
-crawler.Crawl(new Uri("http://whatever.com/"));
 }}}
 
+The following configuration data should be added to the app.config file of the application that will be running Abot.
 {{{
   <configSections>
     <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
@@ -200,7 +199,7 @@ crawler.Crawl(new Uri("http://whatever.com/"));
       </layout>
     </appender>
     <root>
-      <level value="DEBUG" />
+      <level value="INFO" />
       <appender-ref ref="ConsoleAppender" />
       <appender-ref ref="RollingFileAppender" />
     </root>
