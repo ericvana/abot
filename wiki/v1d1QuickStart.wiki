@@ -17,7 +17,7 @@
   using Abot.Poco;
   }}}
   #: Configure Abot using ONE of the following methods. Look at Abot.Poco.!CrawlConfiguration comments to see what effect each config value has on the crawl [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here].
-    #: Add the following to the app.config of the assembly using the library
+    #: Add the following to the app.config of the assembly using the library.
     {{{
 <?xml version="1.0"?>
 <configuration>
@@ -28,7 +28,7 @@
   <abot>
     <crawlBehavior 
       maxConcurrentThreads="10" 
-      maxPagesToCrawl="10" <!-- You will want to crank this up!!! -->
+      maxPagesToCrawl="1000"
       maxPagesToCrawlPerDomain="0" 
       maxPageSizeInBytes="0"
       userAgentString="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; abot v@ABOTASSEMBLYVERSION@ http://code.google.com/p/abot)" 
@@ -51,7 +51,7 @@
       isRespectRobotsDotTextEnabled="false"
       robotsDotTextUserAgentString="abot"
       maxRobotsDotTextCrawlDelayInSeconds="5" 
-      minCrawlDelayPerDomainMilliSeconds="1000"/> <!-- You will want to crank this up!!! -->
+      minCrawlDelayPerDomainMilliSeconds="0"/>     
     <extensionValues>
       <add key="SomeCustomConfigKey1" value="someValue1"/>
       <add key="SomeCustomConfigKey2" value="someValue2"/>
