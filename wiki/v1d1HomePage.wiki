@@ -9,12 +9,13 @@ Abot targets .NET version 4.0.
 
 == What's So Great About It? == 
   * Open Source (Free for commercial and personal use)
-  * Speed (No overhead for useless features)
-  * Every part of the architecture is pluggable (Dependency Injection)
+  * Speed
+  * Every part of the architecture is pluggable
   * Heavily unit tested (High code coverage)
-  * Very lightweight and straight forward (No bloated classes/configurations)
+  * Very lightweight
+  * Easy to get started quickly
   * No database required
-  * Crawl decisions are easily customized (When to crawl a page, when not to crawl, when to crawl page's links, etc..)
+  * Easily customize crawl behavior (When to crawl a page, when not to crawl, when to crawl page's links, etc..)
   * Runs on Mono
 
 == Where Do I Start? ==
