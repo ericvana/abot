@@ -26,7 +26,7 @@ crawler.ShouldDownloadPageContent((crawledPage, crawlContext) =>
 {
 	CrawlDecision decision = new CrawlDecision();
 	if (!crawledPage.Uri.AbsoluteUri.Contains(".com"))
-		return new CrawlDecision { Allow = false, Reason = "Only download raw page conent for .com tlds" };
+		return new CrawlDecision { Allow = false, Reason = "Only download raw page content for .com tlds" };
 
 	return decision;
 });
