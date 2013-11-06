@@ -1,12 +1,18 @@
 #summary How you can contribute to Abot.
 #labels Featured
 
-==Currently Need==
+==Contributing Code==
+  * Read how to build and run tests here http://code.google.com/p/abot/wiki/v1d1SourceCode
+  * Submit pull requests to the master branch at http://github.com/sjdirect/abot/
+  * Be sure all tests in Abot.Test.Unit and Abot.Test.Ingtegration are passing without being commented out or hacked
+  * Be sure to write unit tests for any new code or changes
+
+==We Currently Need==
   * Automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
   * Dedicated or virtual dedicated hardware for the build server, deployment hub, distributed crawl testing, etc..
   * Contributors familiar with the mono environment to get/keep Abot running well on mono
 
-==Always Need==
+==We Always Need==
   * Donations (See section below)
   * Spread the word on blogs/websites and tell others why Abot is great
   * Report bugs or suggest features here http://code.google.com/p/abot/issues
