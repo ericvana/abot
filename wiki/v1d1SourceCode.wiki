@@ -23,7 +23,7 @@ However, if the changes that you are going to make are out of the ordinary or yo
   #: Or download Testdriven.net plugin (my favorite) http://testdriven.net/
 
 ===Your First Build===
-  #: Checkout the latest from http://code.google.com/p/abot/source/checkout or go to the Downloads tab and retrieve the latest source zip
+  #: Clone the latest from https://github.com/sjdirect/abot/ master branch
   #: Open the Abot.sln file in Visual Studio
   #: Build the solution normally
 
