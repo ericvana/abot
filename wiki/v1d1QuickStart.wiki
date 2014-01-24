@@ -151,7 +151,7 @@ void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 CrawlResult result = crawler.Crawl(new Uri("http://localhost:1111/"));
 
 if (result.ErrorOccurred)
-	Console.WriteLine("Crawl of {0} completed with error: {1}", result.RootUri.AbsoluteUri, result.ErrorMessage);
+	Console.WriteLine("Crawl of {0} completed with error: {1}", result.RootUri.AbsoluteUri, result.ErrorException.Message);
 else
 	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
 
