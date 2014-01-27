@@ -1,0 +1,35 @@
+#summary Open Source C# web crawler built for speed and flexibility
+
+= Abot C# Web Crawler =
+
+Abot is an open source C# web crawler built for speed and flexibility. It takes care of the low level plumbing (multithreading, http requests, scheduling, link parsing, etc..). You just register for events to process the page data. You can also plugin your own implementations of core interfaces to take complete control over the crawl process.
+
+Abot targets .NET version 4.0. 
+
+<font color="red">Source code has been moved to http://github.com/sjdirect/abot/. However, this is still the home for all documentation and the downloads tab will always have the latest. Why? Because of github's almighty pull request and forking features make it easier for others to contribute. Hint Hint!!!</font>
+
+== What's So Great About It? == 
+  * Open Source (Free for commercial and personal use)
+  * Speed
+  * Every part of the architecture is pluggable
+  * Heavily unit tested (High code coverage)
+  * Very lightweight
+  * Easy to get started quickly
+  * No database required
+  * Easily customize crawl behavior (When to crawl a page, when not to crawl, when to crawl page's links, etc..)
+  * Runs on Mono
+
+== Where Do I Start? ==
+  * [v1d1QuickStart Tutorial: QuickStart]
+  * [v1d1CustomizingCrawlBehavior Tutorial: Customizing Crawl Behavior]
+  * [v1d1SourceCode Tutorial: Working With The Source Code]
+  * [https://groups.google.com/d/forum/abot-web-crawler Post Questions & Search For Answers]  
+  * [http://code.google.com/p/abot/issues Report Bugs or Suggest Features]
+  * [Contribute Contribute To Abot]
+
+==Significant Contributions==
+  * Abot logo by Erik of shelfequity.com
+
+==Consider Making A Donation==
+A donation of any amount would be greatly appreciated. <br />
+[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G6ZY6BZNBFVQJ https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif]
