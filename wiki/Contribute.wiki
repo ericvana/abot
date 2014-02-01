@@ -2,7 +2,7 @@
 #labels Featured
 
 ==Contributing Code==
-  * Read how to build and run tests here http://code.google.com/p/abot/wiki/v1d1SourceCode
+  * Read how to build and run tests here [v1d2SourceCode]
   * Submit pull requests to the master branch at http://github.com/sjdirect/abot/
   * Be sure all tests in Abot.Test.Unit and Abot.Test.Ingtegration are passing without being commented out or hacked
   * Be sure to write unit tests for any new code or changes
