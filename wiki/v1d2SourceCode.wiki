@@ -35,7 +35,9 @@ However, if the changes that you are going to make are out of the ordinary or yo
 *Abot.!SiteSimulator*: An asp.net mvc application that can simulate any number of pages and several http responses that are encountered during a crawl. This site is used to produce a predictable site crawl for abot.
 Both Abot.Tests.Unit and Abot.Tests.Integration rely on this project to be running on http://localhost:1111/. <br />
 *Abot.Tests.Unit*: Unit tests for all Abot assemblies. Abot.!SiteSimulator site must be running for tests to pass since mocking http web requests is more trouble then its worth.<br />
-*Abot.Tests.Integration*: Tests the end to end crawl behavior. These are real crawls, no mocks/stubs/etc.. Abot.!SiteSimulator site must be running for tests to pass.
+*Abot.Tests.Integration*: Tests the end to end crawl behavior. These are real crawls, no mocks/stubs/etc.. Abot.!SiteSimulator site must be running for tests to pass.<br />
+*Commoner.Core*: A utility library used in the unit tests, mostly for getting/setting private variables, see github repo here https://github.com/sjdirect/commoner<br />
+*Robots*: A robots.txt parsing library, see github repo here https://github.com/sjdirect/nrobots
 
 ===How to run Abot.Demo===
 The demo project has a few config values set that greatly limit Abot's speed.  This is to make sure you don't get banned by your isp provider or get blocked by the sites you are crawling. These setting are..
