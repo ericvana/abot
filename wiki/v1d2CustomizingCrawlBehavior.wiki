@@ -7,7 +7,7 @@ Abot was designed to be as pluggable as possible. This allows you to easily alte
 The easiest way to change Abot's behavior for common features is to change the config values that control them. See the [v1d2Quickstart Quickstart] page for examples on the different ways Abot can be configured.
 
 ==CrawlDecision Callbacks==
-Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic. NOTE: The ICrawlDecisionMaker is called first and if it does not "allow" a decision, these callbacks will not be called.
+Sometimes you don't want to create a class and go through the ceremony of extending a base class or implementing the interface directly. For all you lazy developers out there Abot provides a shorthand method to easily add your custom crawl decision logic. NOTE: The ICrawlDecisionMaker's corresponding method is called first and if it does not "allow" a decision, these callbacks will not be called.
 
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler();
@@ -77,7 +77,7 @@ The following are explanations of each interface that PoliteWebCrawler relies on
 ===ICrawlDecisionMaker===
 The delegate shortcuts are great to add a small amount of logic but if you are doing anything more heavy you will want to pass in your custom implementation of ICrawlDecisionMaker. The crawler calls this implementation to see whether a page should be crawled, whether the page's content should be downloaded and whether a crawled page's links should be crawled.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/CrawlDecisionMaker.cs CrawlDecisionMaker.cs] is the default ICrawlDecisionMaker used by Abot. This class takes care of common checks like making sure the config value MaxPagesToCrawl is not exceeded. Most users will only need to create a class that extends CrawlDecision maker and just add their custom logic. However, you are completely free to create a class that implements ICrawlDecisionMaker and pass it into PoliteWebCrawlers constructor.
 
 {{{
 /// <summary>
@@ -106,23 +106,7 @@ public interface ICrawlDecisionMaker
 ===IThreadManager===
 The IThreadManager interface deals with the multithreading details. It is used by the crawler to manage concurrent http requests. 
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ManualThreadManager.cs ManualThreadManager.cs] is the default IThreadManager used by Abot. There are currently two other implementations, [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/ProducerConsumerThreadManager.cs ProducerConsumerThreadManager.cs] and [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] which are available. They are still being tested to determine their best/worst use cases. 
-
-So far here are the observations:
-
-  * ManualThreadManager
-    * Seems to be the fastest all around thread manager.
-    * Fastest startup since threads are only created when work has to be done on them
-    * Creates real thread objects directly. A bit crude but outperforms others.
-  * TaskThreadManager 
-    * Initial tests show that it is only a little slower than the ManualThreadManager impl.
-    * Uses tpl/threadpool to execute work so this implementation is the most "Correct" way to implement this interface. 
-    * Will likely become the default implementation in the next major release.
-  * ProducerConsumerThreadManager 
-    * Seems to be the slowest so far.
-    * Slowest startup time since it creates MaxConcurrentThreads threads for every instance even if that instance only crawls a single page
-
-
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] is the default IThreadManager used by Abot. 
 
 
 {{{
