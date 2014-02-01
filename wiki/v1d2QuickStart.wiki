@@ -13,7 +13,7 @@
   using Abot.Crawler;
   using Abot.Poco;
   }}}
-  #: Configure Abot using *ONE* of the following methods. Look at Abot.Poco.CrawlConfiguration comments to see what effect each config value has on the crawl https://github.com/sjdirect/abot/blob/master/Abot/Poco/CrawlConfiguration.cs.
+  #: Configure Abot using *ONE* of the following methods. Look at https://github.com/sjdirect/abot/blob/master/Abot/Poco/CrawlConfiguration.cs comments to see what effect each config value has on the crawl.
     #: Add the following to the app.config or web.config file of the assembly using the library. Nuget may have already added this for you.
     {{{
 <configuration>
