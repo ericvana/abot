@@ -142,7 +142,7 @@ public interface IThreadManager : IDisposable
 ===IScheduler===
 The IScheduler interface deals with managing what pages need to be crawled. The crawler gives the links it finds to and gets the pages to crawl from the IScheduler implementation. A common use cases for writing your own implementation might be to distribute crawls across multiple machines which could be managed by a DistributedScheduler.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/FifoScheduler.cs FifoScheduler.cs] is the default IScheduler used by the crawler. It uses a simple queue to crawl found links in a first found first crawled basis. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/Scheduler.cs Scheduler.cs] is the default IScheduler used by the crawler and by default is constructed with in memory collection to determine what pages have been crawled and which need to be crawled. 
 
 {{{
 /// <summary>
@@ -181,7 +181,7 @@ public interface IScheduler
 ===IPageRequester===
 The IPageRequester interface deals with making the raw http requests.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/PageRequester.cs PageRequester.cs] is the default IPageRequester used by the crawler. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/PageRequester.cs PageRequester.cs] is the default IPageRequester used by the crawler. 
 
 {{{
 public interface IPageRequester
@@ -201,7 +201,7 @@ public interface IPageRequester
 ===IHyperLinkParser===
 The IHyperLinkParser interface deals with parsing the links out of raw html.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/HapHyperLinkParser.cs HapHyperlinkParser.cs] is the default IHyperLinkParser used by the crawler. It uses the well known html parsing library [http://htmlagilitypack.codeplex.com/ Html Agility Pack]. There is also an alternative implementation [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/CsQueryHyperLinkParser.cs CsQueryHyperLinkParser.cs] which uses [https://github.com/jamietre/CsQuery CsQuery] to do the parsing. CsQuery uses a css style selector like jquery but all in c#. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/HapHyperLinkParser.cs HapHyperlinkParser.cs] is the default IHyperLinkParser used by the crawler. It uses the well known parsing library [http://htmlagilitypack.codeplex.com/ Html Agility Pack]. There is also an alternative implementation [https://github.com/sjdirect/abot/blob/master/Abot/Core/CsQueryHyperLinkParser.cs CsQueryHyperLinkParser.cs] which uses [https://github.com/jamietre/CsQuery CsQuery] to do the parsing. CsQuery uses a css style selector like jquery but all in c#. 
 
 {{{
 /// <summary>
@@ -219,7 +219,7 @@ public interface IHyperLinkParser
 ===IMemoryManager===
 The IMemoryManager handles memory monitoring. This feature is still experimental and could be removed in a future release if found to be unreliable. 
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/MemoryManager.cs MemoryManager.cs] is the default implementation used by the crawler. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/MemoryManager.cs MemoryManager.cs] is the default implementation used by the crawler. 
 
 {{{
 /// <summary>
@@ -242,7 +242,7 @@ public interface IMemoryManager : IMemoryMonitor, IDisposable
 ===IDomainRateLimiter===
 The IDomainRateLimiter handles domain rate limiting. It will handle determining how much time needs to elapse before it is ok to make another http request to the domain.
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/DomainRateLimiter.cs DomainRateLimiter.cs] is the default implementation used by the crawler. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/DomainRateLimiter.cs DomainRateLimiter.cs] is the default implementation used by the crawler. 
 
 {{{
 /// <summary>
@@ -266,7 +266,7 @@ public interface IDomainRateLimiter
 ===IRobotsDotTextFinder===
 The IRobotsDotTextFinder is responsible for retrieving the robots.txt file for every domain (if isRespectRobotsDotTextEnabled="true") and building the robots.txt abstraction which implements the IRobotsDotText interface. 
 
-[https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Core/RobotsDotTextFinder.cs RobotsDotTextFinder.cs] is the default implementation used by the crawler. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Core/RobotsDotTextFinder.cs RobotsDotTextFinder.cs] is the default implementation used by the crawler. 
 
 {{{
 /// <summary>
