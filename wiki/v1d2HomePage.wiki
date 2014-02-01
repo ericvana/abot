@@ -24,7 +24,7 @@ Abot targets .NET version 4.0.
   * [v1d2CustomizingCrawlBehavior Tutorial: Customizing Crawl Behavior]
   * [v1d2SourceCode Tutorial: Working With The Source Code]
   * [https://groups.google.com/d/forum/abot-web-crawler Post Questions & Search For Answers]  
-  * [https://github.com/sjdirect/abot/issues Report Bugs or Suggest Features]
+  * [Report Bugs or Suggest Features|https://github.com/sjdirect/abot/issues|target='_blank']
   * [Contribute Contribute To Abot]
 
 ==Consider Making A Donation==
