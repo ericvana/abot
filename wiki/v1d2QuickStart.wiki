@@ -170,7 +170,7 @@ void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
         context.CrawlBag.MyFoo2.Bar();
 
         //Also add a dynamic value to the PageToCrawl or CrawledPage
-       e.PageToCrawl.PageBag.Bar = new Bar();
+        e.PageToCrawl.PageBag.Bar = new Bar();
 }
 }}}
   #: Run the crawl
@@ -183,7 +183,7 @@ else
 	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
 
 }}}
-  #: Run the crawl with a cancellation token to stop the crawl whenever you want
+  #: OR run the crawl with a cancellation token to stop the crawl early
 {{{
 CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
