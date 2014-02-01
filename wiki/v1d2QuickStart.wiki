@@ -4,10 +4,8 @@
 
 
 ===Installing Abot===
-  #: Install using nuget
-    PM> Install-Package Abot
-    This will download the binaries and add to your app.config or web.config file.
-  #: Verify the project that will use Abot targets .NET framework version 4.0 or greater
+  #: Install Abot using Nuget https://www.nuget.org/packages/Abot/
+  #: The latest source code can be downloaded from https://github.com/sjdirect/abot
 
 ===Using Abot===
   #: Add the following using statements.. 
@@ -15,8 +13,8 @@
   using Abot.Crawler;
   using Abot.Poco;
   }}}
-  #: Configure Abot using ONE of the following methods. Look at Abot.Poco.!CrawlConfiguration comments to see what effect each config value has on the crawl [https://code.google.com/p/abot/source/browse/branches/1.1/Abot/Poco/CrawlConfiguration.cs here].
-    #: Add the following to the app.config of the assembly using the library.
+  #: Configure Abot using *ONE* of the following methods. Look at Abot.Poco.CrawlConfiguration comments to see what effect each config value has on the crawl https://github.com/sjdirect/abot/blob/master/Abot/Poco/CrawlConfiguration.cs.
+    #: Add the following to the app.config or web.config file of the assembly using the library.
     {{{
 <configuration>
   <configSections>
@@ -139,7 +137,7 @@ void crawler_ProcessPageCrawlCompleted(object sender, PageCrawlCompletedArgs e)
 	else
 		Console.WriteLine("Crawl of page succeeded {0}", crawledPage.Uri.AbsoluteUri);
 
-	if (string.IsNullOrEmpty(crawledPage.RawContent))
+	if (string.IsNullOrEmpty(crawledPage.Content.Text))
 		Console.WriteLine("Page had no content {0}", crawledPage.Uri.AbsoluteUri);
 }
 
@@ -170,6 +168,9 @@ void crawler_ProcessPageCrawlStarting(object sender, PageCrawlStartingArgs e)
 	CrawlContext context = e.CrawlContext;
         context.CrawlBag.MyFoo1.Bar();
         context.CrawlBag.MyFoo2.Bar();
+
+        //Also add a dynamic value to the PageToCrawl or CrawledPage
+       e.PageToCrawl.PageBag.Bar = new Bar();
 }
 }}}
   #: Run the crawl
@@ -182,7 +183,13 @@ else
 	Console.WriteLine("Crawl of {0} completed without error.", result.RootUri.AbsoluteUri);
 
 }}}
+  #: Run the crawl with a cancellation token to stop the crawl whenever you want
+{{{
+CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
+PoliteWebCrawler crawler = new PoliteWebCrawler();
+CrawlResult result = crawler.Crawl(new Uri("addurihere"), cancellationTokenSource);
+}}}
 
 
 == Logging (Optional) ==
@@ -214,7 +221,7 @@ The following configuration data should be added to the app.config file of the a
       </layout>
     </appender>
     <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
-      <file value="log.txt" />
+      <file value="abotlog.txt" />
       <appendToFile value="true" />
       <rollingStyle value="Size" />
       <maxSizeRollBackups value="10" />
