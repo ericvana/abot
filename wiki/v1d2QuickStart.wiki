@@ -5,7 +5,7 @@
 
 ===Installing Abot===
   #: Install Abot using Nuget https://www.nuget.org/packages/Abot/
-  #: The latest source code can be downloaded from https://github.com/sjdirect/abot
+  #: The latest source code can be downloaded from https://github.com/sjdirect/abot (See tutorial on [v1d2SourceCode Working With The Source Code] for more details)
 
 ===Using Abot===
   #: Add the following using statements.. 
