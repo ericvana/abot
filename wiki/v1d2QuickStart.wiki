@@ -153,7 +153,7 @@ void crawler_PageCrawlDisallowed(object sender, PageCrawlDisallowedArgs e)
 	Console.WriteLine("Did not crawl page {0} due to {1}", pageToCrawl.Uri.AbsoluteUri, e.DisallowedReason);
 }
 }}}
-  #: Add any number of custom objects to the dynamic crawl bag. These objects will be available in the CrawlContext.CrawlBag object.
+  #: Add any number of custom objects to the dynamic crawl bag or page bag. These objects will be available in the CrawlContext.CrawlBag object, PageToCrawl.PageBag object or CrawledPage.PageBag object.
 {{{
 PoliteWebCrawler crawler = new PoliteWebCrawler();
 crawler.CrawlBag.MyFoo1 = new Foo();
