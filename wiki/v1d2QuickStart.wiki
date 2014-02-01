@@ -4,10 +4,10 @@
 
 
 ===Installing Abot===
-  #: Download the latest from the [http://code.google.com/p/abot/downloads/list Downloads] page
+  #: Install using nuget
+    PM> Install-Package Abot
+    This will download the binaries and add to your app.config or web.config file.
   #: Verify the project that will use Abot targets .NET framework version 4.0 or greater
-  #: Add a reference to the Abot.dll file if using the binaries download or add a reference to the Abot project if using the source code.
-  #: Nuget package coming soon...
 
 ===Using Abot===
   #: Add the following using statements.. 
