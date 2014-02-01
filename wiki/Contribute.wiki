@@ -15,10 +15,8 @@
 ==We Always Need==
   * Donations (See section below)
   * Spread the word on blogs/websites and tell others why Abot is great
-  * Report bugs or suggest features here http://code.google.com/p/abot/issues
-  * Submit bug fixes or features (contact me if your interested)
-  * Contribute to [http://code.google.com/p/abot-contrib/ Abot-Contrib]
-  * Let us know when you create a cool project that uses Abot so we know
+  * Report bugs or suggest features [https://github.com/sjdirect/abot/issues here]
+  * Let us know when you create a cool project that uses Abot
   * Let us know what we are doing right/wrong. Dont just grab and go.
 
 ==Consider Making A Donation==
