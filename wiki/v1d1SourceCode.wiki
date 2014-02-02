@@ -1,5 +1,5 @@
 #summary How to get started working with Abot's source code
-#labels Featured
+#labels Deprecated
 
 =Working With The Source Code=
 The most common way to customize crawl behavior is by extending classes and overriding methods. You can also create a custom implementation of a core interface. All this can be done outside of Abot's source code. 
