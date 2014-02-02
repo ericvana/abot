@@ -1,4 +1,5 @@
 #summary Customizing Crawl behavior
+#labels Featured
 
 =Customizing Crawl Behavior=
 
