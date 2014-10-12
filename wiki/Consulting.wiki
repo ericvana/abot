@@ -4,11 +4,12 @@
 
 Reasons to consider hiring me instead of doing it yourself...
 
-  * I wrote it, built it and maintain it. No one knows this library better than I do.
+  * I wrote it, built it and maintain it. No one knows this library better than I do
   * I've spent more than 4 years solving problems relating to crawling and processing data from the web. 
   * All modifications/customization will done in the "right places" and existing functionality of the product will not be broken or unexpectedly modified
   * If there is no hook in Abot to modify it to your needs, I can add it to the library so you will be able to upgrade to newer version of Abot in the future.
   * All solutions will take into account that the Abot version may someday need to be updated
+  * I can likely customize Abot to your needs 10x faster than any other developer
 
 = How it works =
 
