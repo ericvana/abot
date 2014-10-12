@@ -1,4 +1,4 @@
-#information on getting custom Abot consulting/development work
+#summary How to get rolling using Abot quickly
 
 = Custom Abot Consulting/Development =
 
