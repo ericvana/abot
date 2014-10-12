@@ -1,0 +1,19 @@
+#Information on getting custom Abot consulting/development work done
+
+= Custom Abot Consulting/Development =
+
+Reasons to consider hiring me instead of doing it yourself...
+
+  * I wrote it, built it and maintain it. No one knows this library better than I do.
+  * I've spent more than 4 years solving problems relating to crawling and processing data from the web. 
+  * All modifications/customization will done in the "right places" and existing functionality of the product will not be broken or unexpectedly modified
+  * If there is no hook in Abot to modify it to your needs, I can add it to the library so you will be able to upgrade to newer version of Abot in the future.
+  * All solutions will take into account that the Abot version may someday need to be updated
+
+= How it works =
+
+I require a good faith donation of $150 to the Abot project before I will begin any serious correspondence/meetings/conversations/estimating. This lets me know you are serious about the contract opportunity. The *FULL AMOUNT* is credited toward any paid blocks of time described below.
+
+I work in prepaid 10 hr blocks. Most minor jobs are done within the 10 hr block but of course that is completely dependent on the complexity of the work/requirements. My per hour rate depends on the number of hours purchased, the complexity of the requirements and any proprietary restrictions.
+
+You receive a specialized build of Abot that you would then plug into your system. This keeps cost down and provides quick turnarounds since it avoids me having to learn the intricacies of your system. 
