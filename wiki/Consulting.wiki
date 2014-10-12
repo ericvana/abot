@@ -13,7 +13,5 @@ Reasons to consider hiring me instead of doing it yourself...
 = How it works =
 
   # I require a good faith donation of $150 to the Abot project before I will begin any serious correspondence/meetings/conversations/estimating. This lets me know you are serious about the contract opportunity. The *FULL AMOUNT* is credited toward any paid blocks of time described below.
-
   # I work in prepaid 10 hr blocks. Most minor jobs are done within the 10 hr block but of course that is completely dependent on the complexity of the work/requirements. My per hour rate depends on the number of hours purchased, the complexity of the requirements and the final intellectual property or licencing agreement.
-
   # I deliver a specialized build of Abot that you would then plug into your system. This keeps cost down and provides quick turnarounds since it avoids me having to learn the intricacies of your system. It also allows much faster debugging if any future bugs pop up since I can Isolate the crawling component from the rest of the system. 
