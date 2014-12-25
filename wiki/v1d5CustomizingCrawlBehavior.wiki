@@ -51,7 +51,7 @@ PoliteWebCrawler crawler = new PoliteWebCrawler(
 	new YourCrawlDecisionMaker(),
 	new YourThreadMgr(), 
 	new YourScheduler(), 
-	new YourHttpRequester(), 
+	new YourPageRequester(), 
 	new YourHyperLinkParser(), 
 	new YourMemoryManager(), 
         new YourDomainRateLimiter,
