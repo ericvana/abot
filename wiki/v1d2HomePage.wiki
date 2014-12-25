@@ -1,12 +1,19 @@
 = Abot C# Web Crawler =
 
 Abot is an open source C# web crawler built for speed and flexibility. It takes care of the low level plumbing (multithreading, http requests, scheduling, link parsing, etc..). You just register for events to process the page data. You can also plugin your own implementations of core interfaces to take complete control over the crawl process.
+  * *Install using Nuget*: https://www.nuget.org/packages/Abot/
+  * *Source code on Github*: http://github.com/sjdirect/abot/
+  * *Documentation*: Check the tutorial links at the bottom of this page
+  * *What Features Are Next?*: [https://www.surveymonkey.com/s/JS5826F Answer some questions] on how you use Abot so we can make the best decision where to spend our time 
+  * *Consulting*: Steven (Abot's author) is available to [Consulting customize Abot to your specific needs] 
+  * *Donate*: Please consider making a donation at the bottom of this page
 
-Abot targets .NET version 4.0. 
 
-<font color="red">Source code has been moved to http://github.com/sjdirect/abot/. However, this is still the home for all documentation. Why? Because of github's almighty pull request and forking features make it easier for others to contribute. Hint Hint!!!</font>
+*News:*
+  * 2014/10/12: Abot is gaining good traction. Over 160 stars on github and google code and almost 17,000 downloads, making it the most popular open source C# web crawler by a large margin. Be sure to star it on github and google code if you haven't already.
+  * 2014/09/04: Abot v1.2.3.1031 released with several patches
+  * 2014/02/01: Abot v1.2.3 stable released! See whats new https://groups.google.com/forum/#!topic/abot-web-crawler/QO0LfFTs6Ag
 
-<font color="red">Now install using Nuget!!! Check it out at https://www.nuget.org/packages/Abot/</font>
 == What's So Great About It? == 
   * Open Source (Free for commercial and personal use)
   * Speed
