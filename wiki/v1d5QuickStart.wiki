@@ -6,7 +6,7 @@
 
 ===Installing Abot===
   * Install Abot using Nuget https://www.nuget.org/packages/Abot/
-  * If you prefer to build from source yourself see the [v1d2SourceCode Working With The Source Code] tutorial
+  * If you prefer to build from source yourself see the [v1d5SourceCode Working With The Source Code] tutorial
 
 ===Using Abot===
   #: Add the following using statements.. 
