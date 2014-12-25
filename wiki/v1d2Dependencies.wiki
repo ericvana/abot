@@ -1,5 +1,4 @@
 #summary Describes Abot's dependencies
-#labels Featured
 
 Abot utilizes several external libraries. If you are using the most simple implementation of Abot (like the code in the quickstart demo) you will not need to reference anything other than the Abot.dll. 
 
