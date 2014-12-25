@@ -10,6 +10,7 @@ Abot is an open source C# web crawler built for speed and flexibility. It takes 
 
 
 *News:*
+  * 2014/12/25: Abot v1.5.0.1 released!!! See whats new https://groups.google.com/forum/#!topic/abot-web-crawler/QO0LfFTs6Ag
   * 2014/10/12: Abot is gaining good traction. Over 160 stars on github and google code and almost 17,000 downloads, making it the most popular open source C# web crawler by a large margin. Be sure to star it on github and google code if you haven't already.
   * 2014/09/04: Abot v1.2.3.1031 released with several patches
   * 2014/02/01: Abot v1.2.3 stable released! See whats new https://groups.google.com/forum/#!topic/abot-web-crawler/QO0LfFTs6Ag
