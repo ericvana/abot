@@ -1,4 +1,5 @@
 #summary Customizing Crawl behavior
+#labels Deprecated
 
 =Customizing Crawl Behavior=
 
