@@ -107,7 +107,7 @@ public interface ICrawlDecisionMaker
 ===IThreadManager===
 The IThreadManager interface deals with the multithreading details. It is used by the crawler to manage concurrent http requests. 
 
-[https://github.com/sjdirect/abot/blob/master/Abot/Core/TaskThreadManager.cs TaskThreadManager.cs] is the default IThreadManager used by Abot. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Util/TaskThreadManager.cs TaskThreadManager.cs] is the default IThreadManager used by Abot. 
 
 
 {{{
@@ -220,7 +220,7 @@ public interface IHyperLinkParser
 ===IMemoryManager===
 The IMemoryManager handles memory monitoring. This feature is still experimental and could be removed in a future release if found to be unreliable. 
 
-[https://github.com/sjdirect/abot/blob/master/Abot/Core/MemoryManager.cs MemoryManager.cs] is the default implementation used by the crawler. 
+[https://github.com/sjdirect/abot/blob/master/Abot/Util/MemoryManager.cs MemoryManager.cs] is the default implementation used by the crawler. 
 
 {{{
 /// <summary>
