@@ -3,15 +3,17 @@
 
 ==Contributing Code==
   * Read how to build and run tests [v1d2SourceCode here]
+  * Keep the changes behind core interfaces (ie.. try not to break any contracts)
   * Submit pull requests to the master branch at http://github.com/sjdirect/abot/
   * Be sure all tests in Abot.Test.Unit and Abot.Test.Ingtegration are passing without being commented out or hacked
   * Be sure to write unit tests for any new code or changes
 
 ==We Currently Need==
-  * And IWebContentExtractor implementation that renders javascript efficiently
+  * Help implementing bug fixes on the [https://github.com/sjdirect/abot/issues Github Issues]
+  * Help implementing new features and bug fixes on [https://github.com/sjdirect/abot/issues Github Issues]. Grab one, comment to let everyone know your progress, then submit a pull request when its polished and ready.
   * Automated performance tests. This would allow us to determine which configurations of Abot work best/worst in several different scenarios.
   * Dedicated or virtual dedicated hardware for the build server, deployment hub, distributed crawl testing, etc..
-  * Contributors familiar with the mono environment to get/keep Abot running well on mono
+  * Contributors familiar with the mono environment to keep Abot running well on mono
 
 ==We Always Need==
   * Donations (See section below)
