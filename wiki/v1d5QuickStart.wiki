@@ -72,6 +72,8 @@
       maxMemoryUsageCacheTimeInSeconds="0"
       maxCrawlDepth="1000"
       isForcedLinkParsingEnabled="false"
+      maxRetryCount="0"
+      minRetryDelayInMilliseconds="0"
       />
     <politeness 
       isRespectRobotsDotTextEnabled="false"
