@@ -15,7 +15,7 @@
   using Abot.Poco;
   }}}
   #: Configure Abot using *ONE* of the following methods. Look at https://github.com/sjdirect/abot/blob/master/Abot/Poco/CrawlConfiguration.cs comments to see what effect each config value has on the crawl.
-    #: Add the following to the app.config or web.config file of the assembly using the library. Nuget will NOT add this for you. *NOTE: The gcServer entry below is a very important entry to add even if you configure Abot using the poco.*
+    #: Add the following to the app.config or web.config file of the assembly using the library. Nuget will NOT add this for you. *NOTE: The gcServer or gcConcurrent entry may help memory usage in your specific use of abot.*
     {{{
 <configuration>
   <configSections>
@@ -23,7 +23,9 @@
     <section name="abot" type="Abot.Core.AbotConfigurationSectionHandler, Abot"/>
   </configSections>
   <runtime>
-    <gcServer enabled="true" />
+    <!-- Experiment with these to see if it helps your memory usage, USE ONLY ONE OF THE FOLLOWING -->
+    <!--<gcServer enabled="true"/>-->
+    <!--<gcConcurrent enabled="true"/>-->
   </runtime>
   <log4net>
     <appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
