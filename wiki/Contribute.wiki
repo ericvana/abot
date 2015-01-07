@@ -2,7 +2,7 @@
 #labels Featured
 
 ==Contributing Code==
-  * Read how to build and run tests [v1d2SourceCode here]
+  * Read how to build and run tests [v1d5SourceCode here]
   * Keep the changes behind core interfaces (ie.. try not to break any contracts)
   * Submit pull requests to the master branch at http://github.com/sjdirect/abot/
   * Be sure all tests in Abot.Test.Unit and Abot.Test.Ingtegration are passing without being commented out or hacked
