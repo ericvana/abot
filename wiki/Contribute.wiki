@@ -3,7 +3,7 @@
 
 ==Contributing Code==
   * Read how to build and run tests [v1d5SourceCode here]
-  * Keep the changes behind core interfaces (ie.. try not to break any contracts)
+  * Keep the changes behind existing interfaces (ie.. try not to break any contracts)
   * Submit pull requests to the master branch at http://github.com/sjdirect/abot/
   * Be sure all tests in Abot.Test.Unit and Abot.Test.Ingtegration are passing without being commented out or hacked
   * Be sure to write unit tests for any new code or changes
