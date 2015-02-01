@@ -15,15 +15,8 @@ However, if the changes that you are going to make are out of the ordinary or yo
   #: Open the Abot.sln file in Visual Studio (all dev done in vs 2013 premium)
   #: Build the solution normally
 
+
 ===External Tools Needed===
-*Fiddler*: A free http proxy application that allows you to see the request and response of http traffic on your local machine. It also allows you to capture all the http requests during a crawl, save them, then play back that exact crawl again (!AutoResponding) using the saved .saz file. 
-
-  #: Download the installer http://www.fiddler2.com/fiddler2/version.asp
-  #: Run the installer.
-  #: Open fiddler
-  #: Select the "!AutoResponder" tab and import the RecordedCrawls.saz file that is located in the root of the abot directory that was created during the clone. 
-  #: Check all checkbox options. This will playback the recorded crawl when fiddler is running. 
-
 *NUnit Test Runner*: The unit tests for Abot are using NUnit which is not supported right out of the box in visual studio. You must either install a NUnit test adapter or a product like TestDriven or Resharper.
 
   #: Download the NUnit test adapter http://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d
