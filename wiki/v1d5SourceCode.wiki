@@ -39,6 +39,7 @@ The demo project has a few config values set that greatly limit Abot's speed.  T
 <abot>
     <crawlBehavior 
       ...(excluded)
+      maxConcurrentThreads="1" 
       maxPagesToCrawl="10" 
       ...(excluded)
       />
@@ -50,7 +51,23 @@ The demo project has a few config values set that greatly limit Abot's speed.  T
   </abot>  
 }}}
 
-This will tell Abot to only crawl up to 10 pages and that it must wait 1 second between each http request.
+This will tell Abot to use 1 thread, to only crawl 10 pages and that it must wait 1 second between each http request. If you want to get a feel for the real speed of Abot then change those settings to the following...
+
+{{{
+<abot>
+    <crawlBehavior 
+      ...(excluded)
+      maxConcurrentThreads="10" 
+      maxPagesToCrawl="10000" 
+      ...(excluded)
+      />
+    <politeness 
+      ...(excluded)
+      minCrawlDelayPerDomainMilliSeconds="0"
+      ...(excluded)
+      />
+  </abot>  
+}}}
 
   #: Right click on the Abot.Demo project and set it as the "startup project"
   #: Then hit ctrl + F5 to see the console app run.
