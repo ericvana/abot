@@ -19,8 +19,7 @@ However, if the changes that you are going to make are out of the ordinary or yo
 ===External Tools Needed===
 *NUnit Test Runner*: The unit tests for Abot are using NUnit which is not supported right out of the box in visual studio. You must either install a NUnit test adapter or a product like TestDriven or Resharper.
 
-  #: Download the [http://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d NUnit test adapter] or install through visual studio extension manager.
-  #: Or download Testdriven.net plugin (my favorite) http://testdriven.net/
+  #: Download the [http://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d NUnit test adapter] or install it through visual studio extension manager.
 
 
 ===Solution Project/Assembly Overview===
